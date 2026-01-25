@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/libre-baskerville-variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/plus-jakarta-sans-variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --text-h1: 4rem;
+  --text-h2: 3rem;
+  --text-h3: 2rem;
+  --font-heading: 'Libre Baskerville';
+  --font-body: 'Plus Jakarta Sans';
+  --color-primary: #0852e9;
+  --color-white: #fefefe;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-heading text-balance leading-none font-semibold;
+  }
+
+  h1 {
+    @apply font-bold text-h2 md:text-h1;
+  }
+
+  h2 {
+    @apply text-h3 md:text-h2;
+  }
+
+  h3 {
+    @apply text-2xl md:text-h3;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  b {
+    @apply font-bold;
+  }
+}
+
+@utility py-container {
+  @apply py-10 md:py-16;
+}
+
+@utility px-container {
+  @apply w-[min(1280px,100%-2rem)] mx-auto;
+}
+
+@utility p-container {
+  @apply py-container px-container;
+}
