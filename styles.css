@@ -63,6 +63,10 @@ main {
   gap: 2.5rem;
   padding: 1rem;
 
+  @media (max-width: 640px) {
+    height: 100svh;
+  }
+
   & > p {
     color: var(--grey);
   }
