@@ -2,6 +2,7 @@
   font-family: 'Instrument Serif';
   src: url('./assets/instrument-serif-italic.ttf') format('truetype');
   font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -9,7 +10,6 @@
   font-family: 'Instrument Sans';
   src: url('./assets/instrument-sans-regular.ttf') format('truetype');
   font-weight: 400;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -96,6 +96,7 @@ button {
   padding: 12px 16px;
   gap: 16px;
   background: #ffffff;
+  color: var(--black);
   box-shadow:
     inset -1px -1px 4px rgba(42, 36, 30, 0.1),
     inset 1px 1px 4px rgba(42, 36, 30, 0.1);
@@ -103,4 +104,6 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
