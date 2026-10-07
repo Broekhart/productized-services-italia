@@ -1,17 +1,19 @@
 ---
 interface Props {
   class?: string;
+  variant?: 'default' | 'white';
 }
 
-const { class: className } = Astro.props;
+const { class: className, variant = 'default' } = Astro.props;
+
+const sources = {
+  default: { src: '/images/producticized-services-italia-logo.webp', width: 167, height: 41 },
+  white: { src: '/images/productized-services-italia-logo-white.webp', width: 300, height: 77 },
+};
+
+const { src, width, height } = sources[variant];
 ---
 
 <a href="/" class:list={[className]}>
-  <img
-    src="/images/productized-services-italia-logo-white.webp"
-    width="300"
-    height="77"
-    alt="Productized Services Italia"
-    class="h-6 w-auto md:h-auto"
-  />
+  <img src={src} width={width} height={height} alt="Productized Services Italia" class="h-6 w-auto md:h-auto" />
 </a>
