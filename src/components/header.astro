@@ -1,1 +1,31 @@
-<header></header>
+---
+import Button from './ui/Button.astro';
+import Logo from './ui/Logo.astro';
+import { navLinks } from '../data/navigation';
+---
+
+<header class="bg-black py-4 text-white">
+  <div
+    class="px-container flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal"
+  >
+    <Logo class="md:justify-self-start" />
+
+    <nav
+      aria-label="Navigazione principale"
+      class="hidden md:flex md:items-center md:justify-self-center md:gap-6"
+    >
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-base leading-none font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <Button href="#" class="md:col-start-3 md:justify-self-end">Entra nella community</Button>
+  </div>
+</header>
