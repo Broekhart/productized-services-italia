@@ -1,0 +1,78 @@
+---
+import PlusIcon from '../ui/icons/PlusIcon.astro';
+import MinusIcon from '../ui/icons/MinusIcon.astro';
+
+const faqs = [
+  {
+    question: 'Cos\'è "servizi prodottizzati"?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+  },
+  {
+    question: 'Devo già avere un servizio prodottizzato per entrare?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+  },
+  {
+    question: 'Cosa differenzia Skool dal gruppo Telegram gratuito?',
+    answer:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+  },
+  {
+    question: "Posso annullare l'abbonamento quando voglio?",
+    answer:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-white">
+  <img
+    src="/images/big-top-star.webp"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute top-0 left-0 hidden -translate-x-[8%] -translate-y-[12%] md:block"
+  />
+  <img
+    src="/images/big-bottom-star.webp"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-[8%] translate-y-[12%] md:block"
+  />
+
+  <div class="relative px-container py-20 text-center">
+    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
+      FAQ
+    </span>
+
+    <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">Domande frequenti</h2>
+
+    <div class="mx-auto mt-12 max-w-3xl text-left">
+      {
+        faqs.map((faq) => (
+          <details class="faq-item group border-b border-[#0B0B0E1A] px-1 py-[26px]">
+            <summary class="flex cursor-pointer items-center justify-between gap-8">
+              <span class="text-lg leading-[1.5] font-medium text-black">{faq.question}</span>
+              <span class="relative size-[17px] shrink-0">
+                <PlusIcon class="absolute inset-0 text-black group-open:hidden" />
+                <MinusIcon class="absolute inset-0 hidden text-black group-open:block" />
+              </span>
+            </summary>
+
+            <p class="mt-4 text-base leading-normal text-black/60">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item summary {
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+const images = ['/images/tour1.webp', '/images/tour2.webp', '/images/tour3.webp', '/images/tour4.webp'];
+---
+
+<section class="bg-[#FBF7FF] pb-20">
+  <div class="px-container pt-20 text-center">
+    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
+      Workation a Tenerife
+    </span>
+
+    <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">Lavorare, esplorare e crescere insieme.</h2>
+  </div>
+
+  <div class="overflow-hidden">
+    <div class="tour-track flex w-max gap-[38px] pl-4">
+      {
+        [...images, ...images].map((src, i) => (
+          <img
+            src={src}
+            alt=""
+            aria-hidden={i >= images.length}
+            width="426"
+            height="545"
+            class="h-[545px] w-[425.86px] shrink-0 rounded-[44.36px] object-cover"
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .tour-track {
+    animation: tour-scroll 32s linear infinite;
+  }
+
+  @keyframes tour-scroll {
+    to {
+      transform: translateX(calc(-50% - 19px));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tour-track {
+      animation: none;
+    }
+  }
+</style>
