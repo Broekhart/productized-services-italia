@@ -1,0 +1,47 @@
+---
+import PlayIcon from '../ui/icons/PlayIcon.astro';
+
+// Set these once the client provides the video: the real link and its thumbnail image.
+// Leaving videoUrl empty renders a plain dark placeholder, per spec.
+const videoUrl = '';
+const videoThumbnail = '';
+---
+
+<section>
+  <div class="relative h-[441px] bg-[url('/images/bg-spiral.webp')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-[#FA5A6E80]"></div>
+
+    <div class="relative px-container pt-20">
+      <span class="inline-flex rounded-full bg-[#FFFFFF4D] px-[14px] py-[6px] text-sm leading-none font-bold text-white uppercase">
+        La storia dietro la community.
+      </span>
+
+      <h2 class="mt-[17px] max-w-4xl font-bold text-white leading-[1.25] tracking-[-1px]">
+        Perché esiste Productized Services Italia E come può aiutarti?
+      </h2>
+    </div>
+  </div>
+
+  <div class="relative z-10 px-container pb-20">
+    <div class="-mt-[150px]">
+      {
+        videoUrl ? (
+          <a
+            href={videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Guarda il video: perché esiste Productized Services Italia"
+            class="relative block aspect-video w-full overflow-hidden rounded-[32px] bg-cover bg-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            style={{ backgroundImage: `url(${videoThumbnail})` }}
+          >
+            <span class="absolute inset-0 flex items-center justify-center">
+              <PlayIcon aria-hidden="true" class="size-[94px]" />
+            </span>
+          </a>
+        ) : (
+          <div class="aspect-video w-full rounded-[32px] bg-black" />
+        )
+      }
+    </div>
+  </div>
+</section>
