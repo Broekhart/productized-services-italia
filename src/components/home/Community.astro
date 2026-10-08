@@ -1,0 +1,94 @@
+---
+import Button from '../ui/Button.astro';
+import WavyArrowIcon from '../ui/icons/WavyArrowIcon.astro';
+---
+
+<section class="bg-white">
+  <div class="px-container grid grid-cols-1 gap-12 py-20 lg:grid-cols-2 lg:items-start">
+    <div>
+      <span class="inline-flex rounded-full bg-[#FA5A6E1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#FA5A6E] uppercase">
+        La community
+      </span>
+
+      <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">
+        Più di una semplice community. Organizziamo degli incontri dal vivo, perché crediamo nella potenza
+        dell'offline.
+      </h2>
+
+      <p class="mt-[17px] text-base leading-normal text-black/60">
+        Nella community si parla di pricing, retention, posizionamento e vendita. Ma soprattutto, non sei solo.
+        Nel 2025 ci siamo incontrati a Tenerife per il primo workation della community.
+      </p>
+
+      <Button href="#" variant="solid" class="mt-10">Entra nella community</Button>
+    </div>
+
+    <div>
+      <div class="rounded-[28px] bg-[#825CBB] p-6">
+        <p class="text-2xl leading-[1.25] font-semibold tracking-[-1px] text-white">
+          Più workation in arrivo in tutta Europa. Chi è dentro alla community paid ha accesso prioritario ai
+          posti, sempre limitati.
+        </p>
+      </div>
+
+      <div class="mt-[15px] grid grid-cols-2 gap-3.5">
+        <div class="relative aspect-[297/197] overflow-hidden rounded-[28px] bg-[url('/images/location-card-bg.webp')] bg-cover bg-center p-6">
+          <img
+            src="/images/location-icon.webp"
+            alt=""
+            width="33"
+            height="54"
+            class="absolute top-[55%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
+          />
+          <p class="absolute bottom-6 left-6 text-base leading-none font-bold text-white">Tenerife — già fatto</p>
+          <img
+            src="/images/purple-emoji.webp"
+            alt=""
+            aria-hidden="true"
+            width="46"
+            height="47"
+            class="absolute top-[23%] left-[87.5%] h-[47px] w-[46px] -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
+
+        <div class="relative aspect-[297/197] overflow-hidden rounded-[28px] bg-[url('/images/yellow-card-bg.webp')] bg-cover bg-center p-6">
+          <img
+            src="/images/red-location-icon.webp"
+            alt=""
+            width="33"
+            height="54"
+            class="absolute top-[32%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
+          />
+          <div class="absolute bottom-6 left-6">
+            <p class="text-base leading-none font-bold text-black">Prossima destinazione — da annunciare</p>
+            <a href="#" class="mt-2 inline-block text-sm leading-none font-bold text-[#B44EEB] underline">
+              Resta aggiornato entrando nella community
+            </a>
+          </div>
+          <img
+            src="/images/orange-cool-head.webp"
+            alt=""
+            aria-hidden="true"
+            width="39"
+            height="46"
+            class="absolute top-[24.5%] left-[84.5%] h-[46px] w-[39px] -translate-x-1/2 -translate-y-1/2"
+          />
+        </div>
+      </div>
+
+      <div class="relative mt-9">
+        <WavyArrowIcon class="absolute top-0 left-0 hidden h-[87px] w-[29px] sm:block" />
+        <div class="ml-0 w-full rounded-[28px] bg-[#0000000A] p-6 sm:ml-[10%] sm:w-[65%]">
+          <img src="/images/star-rating.webp" alt="5 stelle" width="137" height="20" class="h-5 w-[137px]" />
+          <p class="mt-3 text-base leading-normal text-black italic">
+            "Quote da un membro che ha partecipato alla workation di Tenerife"
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="/images/nome.webp" alt="" class="size-10 shrink-0 rounded-full object-cover" />
+            <p class="text-sm leading-normal font-medium text-black">Nome, ruolo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

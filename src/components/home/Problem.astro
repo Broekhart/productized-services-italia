@@ -1,0 +1,59 @@
+---
+const cards = [
+  {
+    number: '01',
+    title: 'Isolamento',
+    body: 'Nessuno intorno a te capisce davvero cosa significa lavorare ad abbonamento. Ti confronti solo con freelance "a progetto" o agenzie tradizionali.',
+    icon: '/images/yellow-icon.webp',
+  },
+  {
+    number: '02',
+    title: 'Nessuna rete',
+    body: 'Non sai dove trovare i primi clienti, un collaboratore di fiducia, o qualcuno con cui fare partnership. Ogni opportunità la devi costruire da zero.',
+    icon: '/images/pink-icon.webp',
+  },
+  {
+    number: '03',
+    title: 'Nessun metodo',
+    body: "Hai idee, ma manca un percorso chiaro: come strutturare l'offerta, il pricing, l'onboarding, senza reinventare la ruota.",
+    icon: '/images/purple-icon.webp',
+  },
+];
+---
+
+<section class="relative bg-black text-white">
+  <div class="absolute inset-0 bg-[url('/images/gradient-bg-trimmed.webp')] bg-cover bg-bottom"></div>
+  <div class="absolute inset-0 bg-black/63"></div>
+
+  <div class="relative px-container py-20">
+    <span class="inline-flex rounded-full bg-white/10 px-4 py-2 text-sm leading-none font-bold text-[#D1DF64] uppercase">
+      Il problema
+    </span>
+
+    <h2 class="mt-[17px] max-w-4xl font-bold leading-[1.25] tracking-[-1px]">
+      Prodottizzare un servizio in Italia può essere difficile
+    </h2>
+
+    <div class="mt-9 grid grid-cols-1 gap-4 md:grid-cols-3">
+      {
+        cards.map((card) => (
+          <div class="rounded-3xl border border-white/10 bg-white/5 pt-9 pr-[30px] pb-9 pl-[30px]">
+            <div class="flex items-start justify-between">
+              <span class="text-base leading-none font-bold text-[#FA5A6E]">{card.number}</span>
+              {card.icon && <img src={card.icon} alt="" width="68" height="74" class="h-[74.09px] w-[68.04px]" />}
+            </div>
+            <h3 class="mt-3 text-xl leading-none font-bold">{card.title}</h3>
+            <p class="mt-3 text-sm leading-normal text-white/55">{card.body}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-[43px] max-w-5xl text-2xl leading-[39.2px] font-semibold">
+      Ciò che ti serve non è un altro corso comprato e non finito.{' '}
+      <span class="bg-gradient-to-br from-[#D1DF64] to-[#FA5A6E] bg-clip-text text-transparent">
+        Ma una comunity viva, reale, un metodo da seguire e diverse occasioni di lavoro, si.
+      </span>
+    </p>
+  </div>
+</section>

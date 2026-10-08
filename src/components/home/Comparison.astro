@@ -1,0 +1,98 @@
+---
+import Button from '../ui/Button.astro';
+import TelegramIcon from '../ui/icons/TelegramIcon.astro';
+import CheckCircleIcon from '../ui/icons/CheckCircleIcon.astro';
+import CrossCircleIcon from '../ui/icons/CrossCircleIcon.astro';
+
+const rows: { label: string; telegram: string | 'check' | 'cross'; skool: string | 'check' | 'cross' }[] = [
+  { label: 'Accesso', telegram: 'Gratuito', skool: 'Abbonamento mensile' },
+  { label: 'Community', telegram: 'Chat libera con 250+ membri', skool: 'Spazio strutturato, classifiche, percorsi' },
+  { label: 'Bacheca lavoro', telegram: 'cross', skool: 'check' },
+  { label: 'Corso "Servizi Prodottizzati"', telegram: 'cross', skool: 'check' },
+  { label: 'Workation', telegram: 'Annunci pubblici', skool: 'Accesso prioritario ai posti' },
+  { label: 'Supporto/feedback diretto', telegram: 'Informale', skool: 'Strutturato' },
+];
+---
+
+<section class="overflow-hidden bg-white">
+  <div class="px-container py-20">
+    <div class="flex flex-col items-center text-center">
+      <span class="inline-flex rounded-full bg-[#FA5A6E1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#FA5A6E] uppercase">
+        Confronto
+      </span>
+
+      <h2 class="mt-[17px] max-w-2xl font-bold leading-[1.25] tracking-[-1px]">
+        Gratis per iniziare. A pagamento per evolvere.
+      </h2>
+    </div>
+
+    <div class="relative mt-12">
+      <img
+        src="/images/top-left-card.webp"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute top-0 left-0 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+      />
+      <img
+        src="/images/bottom-right-card.webp"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/2 translate-y-1/2 md:block"
+      />
+
+      <div class="overflow-x-auto">
+        <div class="mx-auto w-[1116px] max-w-none overflow-hidden rounded-[28px] border border-black/10">
+          <div class="grid grid-cols-3">
+            <div class="bg-white"></div>
+            <div class="flex items-center gap-2.5 bg-[#69DBFC2E] px-6 py-5">
+              <TelegramIcon class="size-6 shrink-0" />
+              <span class="text-lg leading-[1.5] font-bold text-black">Gruppo Telegram</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-[#B44EEB] px-6 py-5">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-bold text-[#1E1B4B]">
+                sk
+              </span>
+              <span class="text-lg leading-[1.5] font-bold text-white">Community Skool</span>
+            </div>
+          </div>
+
+          {
+            rows.map((row) => (
+              <div class="grid grid-cols-3 border-t border-black/5">
+                <div class="flex items-center bg-white px-6 py-5">
+                  <span class="text-sm leading-[1.5] font-semibold text-black">{row.label}</span>
+                </div>
+                <div class="flex items-center bg-[#69DBFC12] px-6 py-5">
+                  {row.telegram === 'check' ? (
+                    <CheckCircleIcon />
+                  ) : row.telegram === 'cross' ? (
+                    <CrossCircleIcon />
+                  ) : (
+                    <span class="text-base leading-[1.5] font-normal text-black">{row.telegram}</span>
+                  )}
+                </div>
+                <div class="flex items-center bg-[#B44EEB0F] px-6 py-5">
+                  {row.skool === 'check' ? (
+                    <CheckCircleIcon />
+                  ) : row.skool === 'cross' ? (
+                    <CrossCircleIcon />
+                  ) : (
+                    <span class="text-base leading-[1.5] font-normal text-black">{row.skool}</span>
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <Button href="#" variant="solid">Entra nella community Skool</Button>
+
+      <a href="#" class="mt-4 block text-sm leading-none font-bold text-[#B44EEB]">
+        Prova prima il gruppo Telegram gratis
+      </a>
+    </div>
+  </div>
+</section>
