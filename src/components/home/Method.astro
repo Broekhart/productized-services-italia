@@ -1,0 +1,90 @@
+---
+import Button from '../ui/Button.astro';
+
+const items = [
+  'Full-time o part-time: cosa scegliere',
+  'Costruire da solo o in team',
+  'Tenerlo semplice: il principio ASAP',
+  'Posizionarti senza bisogno di un grande pubblico',
+  'Definire i tuoi package e il pricing',
+  'Costruire un portfolio credibile',
+  'Trovare il primo cliente',
+  'Vendere senza fare call infinite',
+  'Gli errori più comuni da evitare',
+  'Gestire i pagamenti e i rinnovi',
+];
+
+const columns = [items.slice(0, 5), items.slice(5, 10)];
+---
+
+<section class="bg-[#FDFFEE]">
+  <div class="px-container py-20">
+    <div class="flex items-start gap-[42px]">
+      <div class="flex-1">
+        <span class="inline-flex rounded-full bg-[#D1DF644D] px-3.5 py-1.5 text-sm leading-none font-bold text-[#6B7226] uppercase">
+          Il metodo
+        </span>
+
+        <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">
+          Il percorso per passare da freelance a fondatore di un servizio ad abbonamento.
+        </h2>
+      </div>
+
+      <img
+        src="/images/yellow-icon.webp"
+        alt=""
+        aria-hidden="true"
+        width="131"
+        height="132"
+        class="hidden h-[132px] w-[131px] shrink-0 md:block"
+      />
+    </div>
+
+    <div class="mt-[62px] grid grid-cols-1 gap-12 lg:grid-cols-[342px_1fr]">
+      <div class="relative overflow-hidden rounded-[28px] bg-[url('/images/yellow-card-bg.webp')] bg-cover bg-center px-8 py-[58px]">
+        <img
+          src="/images/orange-cool-head.webp"
+          alt=""
+          aria-hidden="true"
+          width="39"
+          height="46"
+          class="absolute top-6 right-6 h-[46px] w-[39px]"
+        />
+        <p class="text-base leading-normal font-medium text-[#161219]">
+          Questo percorso fatto in solitaria può essere molto insidioso, e lo dico perché ci sono passato.
+          Proprio per questo ho creato una roadmap che ti permetterà di non commettere gli errori che ho
+          commesso io e di accelerare il tuo percorso.
+        </p>
+      </div>
+
+      <div>
+        <div class="grid grid-cols-1 gap-x-[47px] gap-y-6 sm:grid-cols-2">
+          {
+            columns.map((column) => (
+              <ol class="flex flex-col gap-6">
+                {column.map((text, i) => {
+                  const number = String(column === columns[0] ? i + 1 : i + 6).padStart(2, '0');
+                  return (
+                    <li class="flex gap-4 border-b border-black/10 pb-6 last:border-0 last:pb-0">
+                      <span class="text-base leading-normal font-bold text-[#B44EEB]">{number}</span>
+                      <span class="text-base leading-normal font-medium text-black">{text}</span>
+                    </li>
+                  );
+                })}
+              </ol>
+            ))
+          }
+        </div>
+
+        <p class="mt-8 text-base leading-normal font-medium text-black/60">
+          Incluso per tutti i membri della community paid (il corso è incluso nell'abbonamento Skool, non è
+          venduto separatamente).
+        </p>
+
+        <div class="mt-10 text-center">
+          <Button href="#" variant="solid">Accedi al corso entrando nella community</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

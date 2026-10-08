@@ -1,0 +1,98 @@
+---
+import Button from '../ui/Button.astro';
+
+const wideModules = [
+  {
+    number: '01',
+    bg: '/images/purple-bg-patch.webp',
+    title: 'Introduzione ai Productized Services',
+    body: 'Scopri il modello e cosa rende un servizio realmente productized.',
+  },
+  {
+    number: '02',
+    bg: '/images/red-bg-patch.webp',
+    title: 'Productizza il tuo servizio',
+    body: "Trasforma la tua esperienza in un'offerta chiara e strutturata.",
+  },
+];
+
+const narrowModules = [
+  {
+    number: '03',
+    bg: '/images/lemon-bg-patch.webp',
+    title: 'Come distinguerti su LinkedIn',
+    body: 'Costruisci un posizionamento forte e raggiungi le persone giuste.',
+  },
+  {
+    number: '04',
+    bg: '/images/blue-bg-patch.webp',
+    title: 'Acquisizione clienti',
+    body: 'Impara a trovare prospect e trasformare le conversazioni in clienti.',
+  },
+  {
+    number: '05',
+    bg: '/images/black-bg-patch.webp',
+    title: 'Onboarding e fidelizzazione',
+    body: "Crea un'esperienza cliente solida e costruisci relazioni durature.",
+    numberClass: 'text-white/20',
+  },
+];
+---
+
+<section class="bg-[#FBF7FF]">
+  <div class="px-container py-20">
+    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
+      Il corso
+    </span>
+
+    <h2 class="mt-[17px] max-w-2xl font-bold leading-[1.25] tracking-[-1px]">
+      5 moduli per costruire il tuo Productized Service.
+    </h2>
+
+    <div class="mt-12 flex flex-col items-center gap-8">
+      <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
+        {
+          wideModules.map((mod) => (
+            <div
+              class="relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[600px]"
+              style={{ backgroundImage: `url(${mod.bg})` }}
+            >
+              <span class="absolute top-7 left-7 text-[119.89px] leading-[1.5] font-extrabold text-[#00000094]">
+                {mod.number}
+              </span>
+
+              <div class="absolute inset-x-0 bottom-0 h-[164px] rounded-[28px] bg-white px-6 pt-[35px] pb-6">
+                <h3 class="text-2xl leading-none font-bold text-black">{mod.title}</h3>
+                <p class="mt-2 max-w-[431px] text-base leading-[1.5] font-normal text-black/60">{mod.body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
+        {
+          narrowModules.map((mod) => (
+            <div
+              class="relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[392px]"
+              style={{ backgroundImage: `url(${mod.bg})` }}
+            >
+              <span class:list={['absolute top-7 left-7 text-[109.27px] leading-[1.5] font-extrabold', mod.numberClass ?? 'text-[#00000094]']}>
+                {mod.number}
+              </span>
+
+              <div class="absolute inset-x-0 bottom-0 h-[164px] rounded-[28px] bg-white px-6 pt-[35px] pb-6">
+                <h3 class="text-2xl leading-none font-bold text-black">{mod.title}</h3>
+                <p class="mt-2 max-w-[431px] text-base leading-[1.5] font-normal text-black/60">{mod.body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <Button href="#" variant="solid">Entra nella community Skool</Button>
+    </div>
+  </div>
+</section>

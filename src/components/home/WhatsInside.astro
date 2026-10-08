@@ -1,0 +1,69 @@
+---
+import Button from '../ui/Button.astro';
+
+const cards = [
+  {
+    image: '/images/cosa-1.webp',
+    title: 'Community',
+    titleClass: 'text-[#0D6E8C]',
+    body: "Confrontati ogni giorno con 250+ professionisti che stanno costruendo lo stesso modello di business. Domande, feedback, partnership, amicizie — e i workation in giro per l'Europa per conoscersi davvero.",
+  },
+  {
+    image: '/images/cosa2.webp',
+    title: 'Offerte di lavoro',
+    titleClass: 'text-[#7A2FB0]',
+    body: 'Dentro alla parte paid trovi una bacheca con opportunità riservate ai membri: collaborazioni, clienti in cerca di servizi prodottizzati, posizioni aperte da altri membri della community.',
+  },
+  {
+    image: '/images/cosa3.webp',
+    title: 'Corso',
+    titleClass: 'text-[#6B7226]',
+    body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
+  },
+];
+---
+
+<section class="overflow-hidden bg-[#FBF7FF]">
+  <div class="relative px-container py-20">
+    <div class="flex flex-col items-center text-center">
+      <span class="inline-flex rounded-full bg-[#B44EEB1A] px-4 py-2 text-sm leading-none font-bold text-[#B44EEB] uppercase">
+        Cosa trovi dentro
+      </span>
+
+      <h2 class="mt-[17px] max-w-4xl font-bold leading-[1.25] tracking-[-1px]">
+        Tutto ciò di cui hai bisogno, in un unico posto.
+      </h2>
+    </div>
+
+    <div class="relative mt-12">
+      <img
+        src="/images/top-left-card.webp"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute top-0 left-0 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+      />
+      <img
+        src="/images/bottom-right-card.webp"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/2 translate-y-1/2 md:block"
+      />
+
+      <div class="flex flex-col items-center gap-8 md:flex-row md:justify-center">
+        {
+          cards.map((card) => (
+            <div class="w-full min-h-[466px] rounded-[28px] border border-black/5 bg-white p-[19px] md:w-[357px]">
+              <img src={card.image} alt="" class="w-full rounded-[20px]" />
+              <h3 class={`mt-[31px] text-xl leading-none font-bold ${card.titleClass}`}>{card.title}</h3>
+              <p class="mt-2 text-sm leading-normal text-black/60">{card.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <Button href="#" variant="solid">Entra nella community</Button>
+    </div>
+  </div>
+</section>
