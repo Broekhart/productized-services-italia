@@ -6,6 +6,7 @@ const cards = [
     image: '/images/cosa-1.webp',
     title: 'Community',
     titleClass: 'text-[#0D6E8C]',
+    hoverColor: '#2B6B87',
     body: "Confrontati ogni giorno con 250+ professionisti che stanno costruendo lo stesso modello di business. Domande, feedback, partnership, amicizie — e i workation in giro per l'Europa per conoscersi davvero.",
   },
   {
@@ -18,6 +19,7 @@ const cards = [
     image: '/images/cosa3.webp',
     title: 'Corso',
     titleClass: 'text-[#6B7226]',
+    hoverColor: '#6B7226',
     body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
   },
 ];
@@ -52,7 +54,13 @@ const cards = [
       <div class="flex flex-col items-center gap-8 md:flex-row md:justify-center">
         {
           cards.map((card) => (
-            <div class="w-full min-h-[466px] rounded-[28px] border border-black/5 bg-white p-[19px] md:w-[357px]">
+            <div
+              class:list={[
+                'min-h-[466px] w-full rounded-[28px] border border-black/5 bg-white p-[19px] md:w-[357px]',
+                card.hoverColor && 'inside-card',
+              ]}
+              style={card.hoverColor ? `--hover-color: ${card.hoverColor}` : undefined}
+            >
               <img src={card.image} alt="" class="w-full rounded-[20px]" />
               <h3 class={`mt-[31px] text-xl leading-none font-bold ${card.titleClass}`}>{card.title}</h3>
               <p class="mt-2 text-sm leading-normal text-black/60">{card.body}</p>
@@ -67,3 +75,17 @@ const cards = [
     </div>
   </div>
 </section>
+
+<style>
+  .inside-card {
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .inside-card:hover {
+    border-color: var(--hover-color);
+    box-shadow:
+      0 0 0 2px var(--hover-color),
+      0 12px 24px -6px rgb(0 0 0 / 0.35);
+  }
+</style>

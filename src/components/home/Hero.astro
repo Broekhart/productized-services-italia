@@ -2,8 +2,14 @@
 import Button from '../ui/Button.astro';
 ---
 
-<section class="flex min-h-dvh flex-col justify-center bg-black text-white">
-  <div class="px-container flex flex-col py-container">
+<section class="relative flex min-h-dvh flex-col justify-center overflow-hidden bg-black text-white">
+  <div
+    class="hero-glow pointer-events-none absolute inset-0 bg-[url('/images/hero-gradient-bg.png')] bg-cover bg-right-bottom bg-no-repeat"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative px-container flex flex-col py-container">
     <div class="inline-flex items-center gap-2 self-start rounded-full bg-white/15 py-2 pr-[18px] pl-2">
       <span class="rounded-full bg-[#B44EEB] px-2.5 py-1 text-sm leading-none font-semibold text-white uppercase">
         Per freelance
@@ -31,3 +37,36 @@ import Button from '../ui/Button.astro';
     </p>
   </div>
 </section>
+
+<style>
+  @property --glow-reach {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  /* On load the gradient grows out of the bottom-right corner in 6 distinct steps, each brighter and more complete. */
+  .hero-glow {
+    --glow-reach: 0%;
+    mask-image: radial-gradient(circle at 100% 100%, #000 calc(var(--glow-reach) * 0.55), transparent var(--glow-reach));
+    animation: hero-glow-in 6s steps(6, jump-end) both;
+  }
+
+  @keyframes hero-glow-in {
+    from {
+      --glow-reach: 0%;
+      filter: brightness(0.15);
+    }
+    to {
+      --glow-reach: 160%;
+      filter: brightness(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-glow {
+      animation: none;
+      mask-image: none;
+    }
+  }
+</style>
