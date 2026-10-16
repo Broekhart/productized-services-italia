@@ -31,17 +31,45 @@ const videoThumbnail = '';
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Guarda il video: perché esiste Productized Services Italia"
-            class="relative block aspect-video w-full overflow-hidden rounded-[32px] bg-cover bg-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            style={{ backgroundImage: `url(${videoThumbnail})` }}
+            class="story-video relative block aspect-video w-full overflow-hidden rounded-[32px] bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
+            <span
+              class="story-video-content absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${videoThumbnail})` }}
+            />
             <span class="absolute inset-0 flex items-center justify-center">
-              <PlayIcon aria-hidden="true" class="size-[94px]" />
+              <PlayIcon aria-hidden="true" class="story-video-play size-[94px]" />
             </span>
           </a>
         ) : (
-          <div class="aspect-video w-full rounded-[32px] bg-black" />
+          <div class="story-video relative aspect-video w-full overflow-hidden rounded-[32px] bg-black">
+            <div class="story-video-content absolute inset-0 bg-black" />
+          </div>
         )
       }
     </div>
   </div>
 </section>
+
+<style>
+  .story-video-content,
+  .story-video-play {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .story-video:hover .story-video-content {
+    transform: scale(1.08);
+  }
+  .story-video:hover .story-video-play {
+    transform: scale(1.12);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .story-video-content,
+    .story-video-play {
+      transition: none;
+    }
+    .story-video:hover .story-video-content,
+    .story-video:hover .story-video-play {
+      transform: none;
+    }
+  }
+</style>

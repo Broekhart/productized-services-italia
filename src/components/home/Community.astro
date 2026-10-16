@@ -38,7 +38,7 @@ import WavyArrowIcon from '../ui/icons/WavyArrowIcon.astro';
             alt=""
             width="33"
             height="54"
-            class="absolute top-[55%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
+            class="location-hop absolute top-[55%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
           />
           <p class="absolute bottom-6 left-6 text-base leading-none font-bold text-white">Tenerife — già fatto</p>
           <img
@@ -57,7 +57,7 @@ import WavyArrowIcon from '../ui/icons/WavyArrowIcon.astro';
             alt=""
             width="33"
             height="54"
-            class="absolute top-[32%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
+            class="location-hop absolute top-[32%] left-[18%] h-[54px] w-[33px] -translate-x-1/2 -translate-y-1/2"
           />
           <div class="absolute bottom-6 left-6">
             <p class="text-base leading-none font-bold text-black">Prossima destinazione — da annunciare</p>
@@ -92,3 +92,26 @@ import WavyArrowIcon from '../ui/icons/WavyArrowIcon.astro';
     </div>
   </div>
 </section>
+
+<style>
+  .location-hop {
+    animation: location-hop 3.2s ease-in-out infinite;
+  }
+  @keyframes location-hop {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .location-hop {
+      animation: none;
+    }
+  }
+</style>

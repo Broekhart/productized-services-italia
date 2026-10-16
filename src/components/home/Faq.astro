@@ -31,13 +31,13 @@ const faqs = [
     src="/images/big-top-star.webp"
     alt=""
     aria-hidden="true"
-    class="pointer-events-none absolute top-0 left-0 hidden -translate-x-[8%] -translate-y-[12%] md:block"
+    class="faq-star faq-star-left pointer-events-none absolute top-0 left-0 hidden -translate-x-[8%] -translate-y-[12%] md:block"
   />
   <img
     src="/images/big-bottom-star.webp"
     alt=""
     aria-hidden="true"
-    class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-[8%] translate-y-[12%] md:block"
+    class="faq-star faq-star-right pointer-events-none absolute right-0 bottom-0 hidden translate-x-[8%] translate-y-[12%] md:block"
   />
 
   <div class="relative px-container py-20 text-center">
@@ -74,5 +74,44 @@ const faqs = [
 
   .faq-item summary::-webkit-details-marker {
     display: none;
+  }
+
+  .faq-star {
+    animation: faq-star-turn 5s infinite;
+  }
+
+  /* The two stars turn in opposite directions. */
+  .faq-star-left {
+    --dir: -1;
+  }
+
+  .faq-star-right {
+    --dir: 1;
+  }
+
+  /* Quick turn forward and down, slow graceful lift back 90% of the way, then the last 10% follows. */
+  @keyframes faq-star-turn {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+    }
+    8% {
+      transform: rotate(calc(18deg * var(--dir)));
+      animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+    }
+    42% {
+      transform: rotate(calc(1.8deg * var(--dir)));
+      animation-timing-function: ease-out;
+    }
+    50%,
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-star {
+      animation: none;
+    }
   }
 </style>
