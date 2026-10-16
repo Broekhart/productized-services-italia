@@ -34,7 +34,7 @@ const narrowModules = [
     bg: '/images/black-bg-patch.webp',
     title: 'Onboarding e fidelizzazione',
     body: "Crea un'esperienza cliente solida e costruisci relazioni durature.",
-    numberClass: 'text-white/20',
+    numberClass: 'text-white/20 group-hover:text-white',
   },
 ];
 ---
@@ -54,10 +54,10 @@ const narrowModules = [
         {
           wideModules.map((mod) => (
             <div
-              class="relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[600px]"
+              class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[600px]"
               style={{ backgroundImage: `url(${mod.bg})` }}
             >
-              <span class="absolute top-7 left-7 text-[119.89px] leading-[1.5] font-extrabold text-[#00000094]">
+              <span class="absolute top-7 left-7 text-[119.89px] leading-[1.5] font-extrabold text-[#00000094] transition-colors duration-300 group-hover:text-black">
                 {mod.number}
               </span>
 
@@ -74,10 +74,10 @@ const narrowModules = [
         {
           narrowModules.map((mod) => (
             <div
-              class="relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[392px]"
+              class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[392px]"
               style={{ backgroundImage: `url(${mod.bg})` }}
             >
-              <span class:list={['absolute top-7 left-7 text-[109.27px] leading-[1.5] font-extrabold', mod.numberClass ?? 'text-[#00000094]']}>
+              <span class:list={['absolute top-7 left-7 text-[109.27px] leading-[1.5] font-extrabold', 'transition-colors duration-300', mod.numberClass ?? 'text-[#00000094] group-hover:text-black']}>
                 {mod.number}
               </span>
 

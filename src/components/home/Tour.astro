@@ -11,8 +11,8 @@ const images = ['/images/tour1.webp', '/images/tour2.webp', '/images/tour3.webp'
     <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">Lavorare, esplorare e crescere insieme.</h2>
   </div>
 
-  <div class="overflow-hidden">
-    <div class="tour-track flex w-max gap-[38px] pl-4">
+  <div class="mt-12 overflow-hidden">
+    <div class="tour-track flex w-max gap-[38px] px-4">
       {
         [...images, ...images].map((src, i) => (
           <img
@@ -31,12 +31,13 @@ const images = ['/images/tour1.webp', '/images/tour2.webp', '/images/tour3.webp'
 
 <style>
   .tour-track {
-    animation: tour-scroll 32s linear infinite;
+    animation: tour-sway 4.5s ease-in-out infinite alternate;
   }
 
-  @keyframes tour-scroll {
+  /* Pendulum: slide until the last image meets the right edge, then swing back. */
+  @keyframes tour-sway {
     to {
-      transform: translateX(calc(-50% - 19px));
+      transform: translateX(min(0px, calc(100vw - 100%)));
     }
   }
 

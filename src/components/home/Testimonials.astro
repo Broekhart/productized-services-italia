@@ -49,7 +49,7 @@ const testimonials = [
             [...testimonials, ...testimonials].map((t, i) => (
               <div
                 aria-hidden={i >= testimonials.length}
-                class="w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
+                class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
               >
                 <div class="flex items-center gap-3">
                   <img src={t.avatar} alt="" class="size-11 shrink-0 rounded-full object-cover" />
@@ -78,7 +78,7 @@ const testimonials = [
             [...testimonials, ...testimonials].map((t, i) => (
               <div
                 aria-hidden={i >= testimonials.length}
-                class="w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
+                class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
               >
                 <div class="flex items-center gap-3">
                   <img src={t.avatar} alt="" class="size-11 shrink-0 rounded-full object-cover" />
@@ -105,17 +105,18 @@ const testimonials = [
 </section>
 
 <style>
+  /* Pendulum, mirrored: same duration and easing, so when the top row moves right the bottom row moves left. */
   .testimonials-row-1 {
-    animation: testimonials-scroll 40s linear infinite;
+    animation: testimonials-sway 5s ease-in-out infinite alternate-reverse;
   }
 
   .testimonials-row-2 {
-    animation: testimonials-scroll 40s linear infinite reverse;
+    animation: testimonials-sway 5s ease-in-out infinite alternate;
   }
 
-  @keyframes testimonials-scroll {
+  @keyframes testimonials-sway {
     to {
-      transform: translateX(calc(-50% - 12px));
+      transform: translateX(min(0px, calc(100vw - 100%)));
     }
   }
 

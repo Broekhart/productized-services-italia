@@ -1,30 +1,38 @@
 ---
 const cards = [
   {
-    value: '100+',
+    values: ['100+', '250+'],
     label: 'membri attivi',
     cardClass: "bg-[url('/images/bg-spiral.webp')] bg-cover bg-center text-white",
   },
   {
-    value: '5',
+    values: ['5', '2', '1'],
     label: 'workation già organizzato',
     cardClass: 'bg-[#D1DF64] text-black',
   },
   {
-    value: 'K',
+    values: ['K', 'W', 'X'],
     label: 'offerte di lavoro condivise ogni mese',
     cardClass: 'bg-[#B44EEB61] text-white',
   },
 ];
 ---
 
-<section class="bg-white">
+<section class="stats-section bg-white">
   <div class="px-container py-20 md:px-[185px]">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
         cards.map((card) => (
           <div class={`flex flex-col items-center justify-center rounded-3xl pt-7 pr-5 pb-7 pl-5 text-center ${card.cardClass}`}>
-            <p class="text-[40px] leading-none font-bold">{card.value}</p>
+            <p class="stat-roll text-[40px] leading-none font-bold" aria-label={card.values.at(-1)} data-steps={card.values.length}>
+              <span class="stat-window" aria-hidden="true">
+                <span class="stat-reel">
+                  {card.values.map((value) => (
+                    <span>{value}</span>
+                  ))}
+                </span>
+              </span>
+            </p>
             <p class="mt-4 text-base leading-none font-medium tracking-normal">{card.label}</p>
           </div>
         ))
@@ -32,3 +40,62 @@ const cards = [
     </div>
   </div>
 </section>
+
+<style>
+  .stat-window {
+    display: block;
+    height: 1.2em;
+    overflow: hidden;
+    line-height: 1.2;
+  }
+  .stat-reel {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.4, 0.5, 1);
+  }
+  .stat-reel > span {
+    display: block;
+    height: 1.2em;
+  }
+  .stat-roll.is-rolled .stat-reel {
+    transform: translateY(calc(-1.2em * (var(--steps) - 1)));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stat-reel {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const section = document.querySelector<HTMLElement>('.stats-section');
+  const rolls = document.querySelectorAll<HTMLElement>('.stat-roll');
+  rolls.forEach((el) => el.style.setProperty('--steps', el.dataset.steps ?? '1'));
+
+  let played = false;
+  const play = () => {
+    if (played) return;
+    played = true;
+    rolls.forEach((el, i) => setTimeout(() => el.classList.add('is-rolled'), i * 80));
+  };
+
+  if (section) {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      // Desktop: roll the first time the pointer enters the section.
+      section.addEventListener('pointerenter', play, { once: true });
+    } else {
+      // Touch devices: roll automatically once the section scrolls into view.
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            play();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.5 },
+      );
+      observer.observe(section);
+    }
+  }
+</script>

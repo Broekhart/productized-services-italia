@@ -85,7 +85,7 @@ const testimonials = [
           [...testimonials, ...testimonials].map((t, i) => (
             <div
               aria-hidden={i >= testimonials.length}
-              class="w-[420px] shrink-0 rounded-[24px] border border-white/10 bg-white/10 pt-9 pr-[30px] pb-9 pl-[30px]"
+              class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/10 pt-9 pr-[30px] pb-9 pl-[30px]"
             >
               <p class="text-base leading-normal font-medium text-white">{t.quote}</p>
               <div class="mt-5 flex items-center gap-3">
@@ -107,12 +107,13 @@ const testimonials = [
 
 <style>
   .opportunity-track {
-    animation: opportunity-scroll 45s linear infinite;
+    animation: opportunity-sway 4.5s ease-in-out infinite alternate;
   }
 
-  @keyframes opportunity-scroll {
+  /* Pendulum: slide until the last card meets the right edge, then swing back. */
+  @keyframes opportunity-sway {
     to {
-      transform: translateX(calc(-50% - 10px));
+      transform: translateX(min(0px, calc(100vw - 100%)));
     }
   }
 
