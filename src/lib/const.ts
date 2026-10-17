@@ -1,3 +1,10 @@
+import Community from '../components/ui/illustrations/community.astro';
+import Jobs from '../components/ui/illustrations/jobs.astro';
+import Course from '../components/ui/illustrations/course.astro';
+import PinkMascotte from '../components/ui/illustrations/pink-mascotte.astro';
+import PurpleMascotte from '../components/ui/illustrations/purple-mascotte.astro';
+import YellowMascotte from '../components/ui/illustrations/yellow-mascotte.astro';
+
 export const NAV_LINKS = [
   { label: 'Community', href: '#' },
   { label: 'Corso', href: '#' },
@@ -156,21 +163,21 @@ export const PROBLEM_CARDS = [
     number: '01',
     title: 'Isolamento',
     body: 'Nessuno intorno a te capisce davvero cosa significa lavorare ad abbonamento. Ti confronti solo con freelance "a progetto" o agenzie tradizionali.',
-    icon: '/images/yellow-icon.webp',
+    icon: YellowMascotte,
     glow: '#D1DF64',
   },
   {
     number: '02',
     title: 'Nessuna rete',
     body: 'Non sai dove trovare i primi clienti, un collaboratore di fiducia, o qualcuno con cui fare partnership. Ogni opportunità la devi costruire da zero.',
-    icon: '/images/pink-icon.webp',
+    icon: PinkMascotte,
     glow: '#FA5A6E',
   },
   {
     number: '03',
     title: 'Nessun metodo',
     body: "Hai idee, ma manca un percorso chiaro: come strutturare l'offerta, il pricing, l'onboarding, senza reinventare la ruota.",
-    icon: '/images/purple-icon.webp',
+    icon: PurpleMascotte,
     glow: '#A855F7',
   },
 ];
@@ -192,9 +199,6 @@ export const STATS_CARDS = [
     cardClass: "bg-[url('/images/bg-spiral-violet.webp')] bg-cover bg-center text-white",
   },
 ];
-
-export const VIDEO_URL = '';
-export const VIDEO_THUMBNAIL = '';
 
 export const TESTIMONIALS = [
   {
@@ -232,23 +236,21 @@ export const TOUR_IMAGES = [
 
 export const WHATS_INSIDE_CARDS = [
   {
-    image: '/images/cosa-1.webp',
+    illustration: Community,
     title: 'Community',
-    titleClass: 'text-[#0D6E8C]',
-    hoverColor: '#2B6B87',
+    color: 'cyan',
     body: "Confrontati ogni giorno con 250+ professionisti che stanno costruendo lo stesso modello di business. Domande, feedback, partnership, amicizie — e i workation in giro per l'Europa per conoscersi davvero.",
   },
   {
-    image: '/images/cosa2.webp',
+    illustration: Jobs,
     title: 'Offerte di lavoro',
-    titleClass: 'text-[#7A2FB0]',
+    color: 'violet-dark',
     body: 'Dentro alla parte paid trovi una bacheca con opportunità riservate ai membri: collaborazioni, clienti in cerca di servizi prodottizzati, posizioni aperte da altri membri della community.',
   },
   {
-    image: '/images/cosa3.webp',
+    illustration: Course,
     title: 'Corso',
-    titleClass: 'text-[#6B7226]',
-    hoverColor: '#6B7226',
+    color: 'yellow-dark',
     body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
   },
-];
+] as const;

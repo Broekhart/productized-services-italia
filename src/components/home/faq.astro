@@ -1,95 +1,22 @@
 ---
 import { FAQS } from '../../lib/const';
-import Plus from '../ui/icons/plus.astro';
-import Minus from '../ui/icons/minus.astro';
+import FAQLogo from '../ui/illustrations/faq-logo.astro';
+import Accordion from '../ui/accordion.astro';
+import Badge from '../ui/badge.astro';
 ---
 
-<section class="relative overflow-hidden bg-white">
-  <img
-    src="/images/big-top-star.webp"
-    alt=""
-    aria-hidden="true"
-    class="faq-star faq-star-left pointer-events-none absolute top-0 left-0 hidden -translate-x-[8%] -translate-y-[12%] md:block"
-  />
-  <img
-    src="/images/big-bottom-star.webp"
-    alt=""
-    aria-hidden="true"
-    class="faq-star faq-star-right pointer-events-none absolute right-0 bottom-0 hidden translate-x-[8%] translate-y-[12%] md:block"
-  />
+<section class='relative overflow-hidden'>
+  <FAQLogo class='animate-star-rotate absolute -top-15 -left-10' />
+  <FAQLogo class='animate-star-rotate absolute -bottom-15 -right-10 rotate-180' />
 
-  <div class="relative px-container py-20 text-center">
-    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
-      FAQ
-    </span>
+  <div class='flex flex-col items-center gap-12 p-container'>
+    <div class='flex flex-col items-center text-center gap-4'>
+      <Badge variant='violet'> FAQ </Badge>
+      <h2>Domande frequenti</h2>
+    </div>
 
-    <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">Domande frequenti</h2>
-
-    <div class="mx-auto mt-12 max-w-3xl text-left">
-      {
-        FAQS.map((faq) => (
-          <details class="faq-item group border-b border-[#0B0B0E1A] px-1 py-[26px]">
-            <summary class="flex cursor-pointer items-center justify-between gap-8">
-              <span class="text-lg leading-[1.5] font-medium text-black">{faq.question}</span>
-              <span class="relative size-[17px] shrink-0">
-                <Plus class="absolute inset-0 text-black group-open:hidden" />
-                <Minus class="absolute inset-0 hidden text-black group-open:block" />
-              </span>
-            </summary>
-
-            <p class="mt-4 text-base leading-normal text-black/60">{faq.answer}</p>
-          </details>
-        ))
-      }
+    <div class='w-full flex flex-col gap-6.5 max-w-2xl'>
+      {FAQS.map((faq) => <Accordion title={faq.question}>{faq.answer}</Accordion>)}
     </div>
   </div>
 </section>
-
-<style>
-  .faq-item summary {
-    list-style: none;
-  }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-star {
-    animation: faq-star-turn 5s infinite;
-  }
-
-  /* The two stars turn in opposite directions. */
-  .faq-star-left {
-    --dir: -1;
-  }
-
-  .faq-star-right {
-    --dir: 1;
-  }
-
-  /* Quick turn forward and down, slow graceful lift back 90% of the way, then the last 10% follows. */
-  @keyframes faq-star-turn {
-    0% {
-      transform: rotate(0deg);
-      animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
-    }
-    8% {
-      transform: rotate(calc(18deg * var(--dir)));
-      animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
-    }
-    42% {
-      transform: rotate(calc(1.8deg * var(--dir)));
-      animation-timing-function: ease-out;
-    }
-    50%,
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .faq-star {
-      animation: none;
-    }
-  }
-</style>

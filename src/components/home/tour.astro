@@ -1,49 +1,22 @@
 ---
 import { TOUR_IMAGES } from '../../lib/const';
+import Badge from '../ui/badge.astro';
 ---
 
-<section class="bg-[#FBF7FF] pb-20">
-  <div class="px-container pt-20 text-center">
-    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
-      Workation a Tenerife
-    </span>
+<section class='bg-white-violet'>
+  <div class='flex flex-col gap-9.5 p-container'>
+    <div class='flex flex-col gap-4 items-center text-center'>
+      <Badge variant='violet'> Workation a Tenerife </Badge>
 
-    <h2 class="mt-[17px] font-bold leading-[1.25] tracking-[-1px]">Lavorare, esplorare e crescere insieme.</h2>
-  </div>
+      <h2>Lavorare, esplorare e crescere insieme.</h2>
+    </div>
 
-  <div class="mt-12 overflow-hidden">
-    <div class="tour-track flex w-max gap-[38px] px-4">
+    <div class='flex gap-9.5 overflow-x-auto scrollbar-hidden'>
       {
-        [...TOUR_IMAGES, ...TOUR_IMAGES].map((src, i) => (
-          <img
-            src={src}
-            alt=""
-            aria-hidden={i >= TOUR_IMAGES.length}
-            width="426"
-            height="545"
-            class="h-[545px] w-[425.86px] shrink-0 rounded-[44.36px] object-cover"
-          />
+        TOUR_IMAGES.map((src) => (
+          <img src={src} alt='' width='426' height='545' class='rounded-4xl object-cover' />
         ))
       }
     </div>
   </div>
 </section>
-
-<style>
-  .tour-track {
-    animation: tour-sway 4.5s ease-in-out infinite alternate;
-  }
-
-  /* Pendulum: slide until the last image meets the right edge, then swing back. */
-  @keyframes tour-sway {
-    to {
-      transform: translateX(min(0px, calc(100vw - 100%)));
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tour-track {
-      animation: none;
-    }
-  }
-</style>

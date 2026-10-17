@@ -1,69 +1,48 @@
 ---
 import { WHATS_INSIDE_CARDS } from '../../lib/const';
+import Badge from '../ui/badge.astro';
 import Button from '../ui/button.astro';
+import ArrowIcon from '../ui/icons/arrow.astro';
+import HalfLogo from '../ui/illustrations/half-logo.astro';
 ---
 
-<section class="overflow-hidden bg-[#FBF7FF]">
-  <div class="relative px-container py-20">
-    <div class="flex flex-col items-center text-center">
-      <span class="inline-flex rounded-full bg-[#B44EEB1A] px-4 py-2 text-sm leading-none font-bold text-[#B44EEB] uppercase">
-        Cosa trovi dentro
-      </span>
+<section class='overflow-hidden bg-[#FBF7FF]'>
+  <div class='flex flex-col items-center gap-12 relative px-container py-20'>
+    <div class='flex flex-col gap-4 items-center text-center'>
+      <Badge variant='violet'> Cosa trovi dentro </Badge>
 
-      <h2 class="mt-[17px] max-w-4xl font-bold leading-[1.25] tracking-[-1px]">
-        Tutto ciò di cui hai bisogno, in un unico posto.
-      </h2>
+      <h2 class='max-w-4xl'>Tutto ciò di cui hai bisogno, in un unico posto.</h2>
     </div>
 
-    <div class="relative mt-12">
-      <img
-        src="/images/top-left-card.webp"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute top-0 left-0 hidden -translate-x-1/2 -translate-y-1/2 md:block"
-      />
-      <img
-        src="/images/bottom-right-card.webp"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/2 translate-y-1/2 md:block"
-      />
+    <div class='relative max-w-6xl'>
+      <HalfLogo class='absolute -top-24 -left-24' />
+      <HalfLogo variant='right' class='absolute -bottom-24 -right-24' />
 
-      <div class="flex flex-col items-center gap-8 md:flex-row md:justify-center">
+      <div class='grid lg:grid-cols-3 gap-8'>
         {
-          WHATS_INSIDE_CARDS.map((card) => (
+          WHATS_INSIDE_CARDS.map(({ color, illustration: Illustration, title, body }) => (
             <div
+              style={`--card-color: var(--color-${color})`}
               class:list={[
-                'min-h-[466px] w-full rounded-[28px] border border-black/5 bg-white p-[19px] md:w-[357px]',
-                card.hoverColor && 'inside-card',
-              ]}
-              style={card.hoverColor ? `--hover-color: ${card.hoverColor}` : undefined}
-            >
-              <img src={card.image} alt="" class="w-full rounded-[20px]" />
-              <h3 class={`mt-[31px] text-xl leading-none font-bold ${card.titleClass}`}>{card.title}</h3>
-              <p class="mt-2 text-sm leading-normal text-black/60">{card.body}</p>
+                'flex flex-col gap-7.5 rounded-[28px] border border-black/5 bg-white p-4.5 hover:border-(--card-color)',
+              ]}>
+              <Illustration class='w-full' />
+              <div class='flex flex-col gap-2'>
+                <h3 class='text-xl leading-none font-bold text-(--card-color)'>{title}</h3>
+                <p class='text-sm leading-normal text-black/60'>{body}</p>
+              </div>
             </div>
           ))
         }
       </div>
     </div>
 
-    <div class="mt-12 flex justify-center">
-      <Button href="#" variant="solid">Entra nella community</Button>
-    </div>
+    <Button
+      href='https://www.skool.com/productized-services-italia-4079/about'
+      target='_blank'
+      rel='noopener noreferrer'
+      variant='secondary'>
+      Entra nella community <ArrowIcon />
+    </Button>
   </div>
 </section>
-
-<style>
-  .inside-card {
-    transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  .inside-card:hover {
-    border-color: var(--hover-color);
-    box-shadow:
-      0 0 0 2px var(--hover-color),
-      0 12px 24px -6px rgb(0 0 0 / 0.35);
-  }
-</style>

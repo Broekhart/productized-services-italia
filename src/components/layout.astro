@@ -37,6 +37,7 @@ const fullTitle = `Productized Services Italia - ${title}`;
     <title>{fullTitle}</title>
     <link rel='preload' href='/fonts/plus-jakarta-sans-variable.ttf' as='font' type='font/ttf' crossorigin />
     <link rel='preload' href='/fonts/libre-baskerville-variable.ttf' as='font' type='font/ttf' crossorigin />
+    <slot name='head' />
   </head>
   <body class='bg-white font-body'>
     <Header />

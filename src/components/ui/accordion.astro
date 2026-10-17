@@ -1,0 +1,24 @@
+---
+import Plus from './icons/plus.astro';
+import Minus from './icons/minus.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<details class='group border-b pb-6.5 border-gray-200'>
+  <summary class='flex items-start justify-between gap-4 cursor-pointer list-none'>
+    <b class='text-xl font-medium'>{title}</b>
+
+    <Plus class='shrink-0 group-open:hidden' />
+    <Minus class='shrink-0 group-open:block hidden' />
+  </summary>
+  <div class='mt-3'>
+    <p class='text-black/60'>
+      <slot />
+    </p>
+  </div>
+</details>
