@@ -1,32 +1,6 @@
 ---
-import StarIcon from '../ui/icons/StarIcon.astro';
-
-const testimonials = [
-  {
-    avatar: '/images/sean.webp',
-    name: 'Sean Rose',
-    role: 'Direttore Commerciale, Azienda Tecnologica',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
-  },
-  {
-    avatar: '/images/dimetria.webp',
-    name: 'Demetria Giles',
-    role: 'Fondatore, Agenzia di Marketing',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 5,
-  },
-  {
-    avatar: '/images/ryan.webp',
-    name: 'Ryan Delk',
-    role: 'Partner, Società di Servizi Professionali',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
-  },
-];
+import { TESTIMONIALS } from '../../lib/const';
+import StarIcon from '../ui/icons/staricon.astro';
 ---
 
 <section class="relative overflow-hidden bg-black">
@@ -46,9 +20,9 @@ const testimonials = [
       <div class="overflow-hidden">
         <div class="testimonials-row-1 flex w-max gap-6 px-container">
           {
-            [...testimonials, ...testimonials].map((t, i) => (
+            [...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
               <div
-                aria-hidden={i >= testimonials.length}
+                aria-hidden={i >= TESTIMONIALS.length}
                 class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
               >
                 <div class="flex items-center gap-3">
@@ -75,9 +49,9 @@ const testimonials = [
       <div class="overflow-hidden">
         <div class="testimonials-row-2 flex w-max gap-6 px-container">
           {
-            [...testimonials, ...testimonials].map((t, i) => (
+            [...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
               <div
-                aria-hidden={i >= testimonials.length}
+                aria-hidden={i >= TESTIMONIALS.length}
                 class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/5 py-9 px-[30px]"
               >
                 <div class="flex items-center gap-3">

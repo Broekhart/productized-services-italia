@@ -1,5 +1,5 @@
 ---
-const images = ['/images/tour1.webp', '/images/tour2.webp', '/images/tour3.webp', '/images/tour4.webp'];
+import { TOUR_IMAGES } from '../../lib/const';
 ---
 
 <section class="bg-[#FBF7FF] pb-20">
@@ -14,11 +14,11 @@ const images = ['/images/tour1.webp', '/images/tour2.webp', '/images/tour3.webp'
   <div class="mt-12 overflow-hidden">
     <div class="tour-track flex w-max gap-[38px] px-4">
       {
-        [...images, ...images].map((src, i) => (
+        [...TOUR_IMAGES, ...TOUR_IMAGES].map((src, i) => (
           <img
             src={src}
             alt=""
-            aria-hidden={i >= images.length}
+            aria-hidden={i >= TOUR_IMAGES.length}
             width="426"
             height="545"
             class="h-[545px] w-[425.86px] shrink-0 rounded-[44.36px] object-cover"

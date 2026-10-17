@@ -1,10 +1,6 @@
 ---
-import PlayIcon from '../ui/icons/PlayIcon.astro';
-
-// Set these once the client provides the video: the real link and its thumbnail image.
-// Leaving videoUrl empty renders a plain dark placeholder, per spec.
-const videoUrl = '';
-const videoThumbnail = '';
+import { VIDEO_THUMBNAIL, VIDEO_URL } from '../../lib/const';
+import PlayIcon from '../ui/icons/playicon.astro';
 ---
 
 <section>
@@ -25,9 +21,9 @@ const videoThumbnail = '';
   <div class="relative z-10 px-container pb-20">
     <div class="-mt-[150px]">
       {
-        videoUrl ? (
+        VIDEO_URL ? (
           <a
-            href={videoUrl}
+            href={VIDEO_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Guarda il video: perché esiste Productized Services Italia"
@@ -35,7 +31,7 @@ const videoThumbnail = '';
           >
             <span
               class="story-video-content absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${videoThumbnail})` }}
+              style={{ backgroundImage: `url(${VIDEO_THUMBNAIL})` }}
             />
             <span class="absolute inset-0 flex items-center justify-center">
               <PlayIcon aria-hidden="true" class="story-video-play size-[94px]" />

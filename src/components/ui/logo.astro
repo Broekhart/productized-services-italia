@@ -1,4 +1,6 @@
 ---
+import { LOGO_SOURCES } from '../../lib/const';
+
 interface Props {
   class?: string;
   variant?: 'default' | 'white';
@@ -6,12 +8,7 @@ interface Props {
 
 const { class: className, variant = 'default' } = Astro.props;
 
-const sources = {
-  default: { src: '/images/producticized-services-italia-logo.webp', width: 167, height: 41 },
-  white: { src: '/images/productized-services-italia-logo-white.webp', width: 300, height: 77 },
-};
-
-const { src, width, height } = sources[variant];
+const { src, width, height } = LOGO_SOURCES[variant];
 ---
 
 <a href='/' class:list={[className]}>

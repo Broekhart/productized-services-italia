@@ -1,8 +1,8 @@
 ---
-import Logo from './ui/Logo.astro';
-import LinkedinIcon from './ui/icons/LinkedinIcon.astro';
-import InstagramIcon from './ui/icons/InstagramIcon.astro';
-import { navLinks } from '../data/navigation';
+import Logo from './ui/logo.astro';
+import LinkedinIcon from './ui/icons/linkedinicon.astro';
+import InstagramIcon from './ui/icons/instagramicon.astro';
+import { NAV_LINKS } from '../lib/const';
 ---
 
 <footer class='bg-black text-white'>
@@ -12,7 +12,7 @@ import { navLinks } from '../data/navigation';
 
       <nav aria-label='Link del footer' class='flex flex-wrap items-center gap-6'>
         {
-          navLinks.map((link) => (
+          NAV_LINKS.map((link) => (
             <a
               href={link.href}
               class='text-base leading-normal font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'>

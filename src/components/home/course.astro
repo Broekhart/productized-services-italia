@@ -1,42 +1,6 @@
 ---
-import Button from '../ui/Button.astro';
-
-const wideModules = [
-  {
-    number: '01',
-    bg: '/images/purple-bg-patch.webp',
-    title: 'Introduzione ai Productized Services',
-    body: 'Scopri il modello e cosa rende un servizio realmente productized.',
-  },
-  {
-    number: '02',
-    bg: '/images/red-bg-patch.webp',
-    title: 'Productizza il tuo servizio',
-    body: "Trasforma la tua esperienza in un'offerta chiara e strutturata.",
-  },
-];
-
-const narrowModules = [
-  {
-    number: '03',
-    bg: '/images/lemon-bg-patch.webp',
-    title: 'Come distinguerti su LinkedIn',
-    body: 'Costruisci un posizionamento forte e raggiungi le persone giuste.',
-  },
-  {
-    number: '04',
-    bg: '/images/blue-bg-patch.webp',
-    title: 'Acquisizione clienti',
-    body: 'Impara a trovare prospect e trasformare le conversazioni in clienti.',
-  },
-  {
-    number: '05',
-    bg: '/images/black-bg-patch.webp',
-    title: 'Onboarding e fidelizzazione',
-    body: "Crea un'esperienza cliente solida e costruisci relazioni durature.",
-    numberClass: 'text-white/20 group-hover:text-white',
-  },
-];
+import { NARROW_MODULES, WIDE_MODULES } from '../../lib/const';
+import Button from '../ui/button.astro';
 ---
 
 <section class="bg-[#FBF7FF]">
@@ -52,7 +16,7 @@ const narrowModules = [
     <div class="mt-12 flex flex-col items-center gap-8">
       <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {
-          wideModules.map((mod) => (
+          WIDE_MODULES.map((mod) => (
             <div
               class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[600px]"
               style={{ backgroundImage: `url(${mod.bg})` }}
@@ -72,7 +36,7 @@ const narrowModules = [
 
       <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {
-          narrowModules.map((mod) => (
+          NARROW_MODULES.map((mod) => (
             <div
               class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[392px]"
               style={{ backgroundImage: `url(${mod.bg})` }}

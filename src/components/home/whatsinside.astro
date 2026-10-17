@@ -1,28 +1,6 @@
 ---
-import Button from '../ui/Button.astro';
-
-const cards = [
-  {
-    image: '/images/cosa-1.webp',
-    title: 'Community',
-    titleClass: 'text-[#0D6E8C]',
-    hoverColor: '#2B6B87',
-    body: "Confrontati ogni giorno con 250+ professionisti che stanno costruendo lo stesso modello di business. Domande, feedback, partnership, amicizie — e i workation in giro per l'Europa per conoscersi davvero.",
-  },
-  {
-    image: '/images/cosa2.webp',
-    title: 'Offerte di lavoro',
-    titleClass: 'text-[#7A2FB0]',
-    body: 'Dentro alla parte paid trovi una bacheca con opportunità riservate ai membri: collaborazioni, clienti in cerca di servizi prodottizzati, posizioni aperte da altri membri della community.',
-  },
-  {
-    image: '/images/cosa3.webp',
-    title: 'Corso',
-    titleClass: 'text-[#6B7226]',
-    hoverColor: '#6B7226',
-    body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
-  },
-];
+import { WHATS_INSIDE_CARDS } from '../../lib/const';
+import Button from '../ui/button.astro';
 ---
 
 <section class="overflow-hidden bg-[#FBF7FF]">
@@ -53,7 +31,7 @@ const cards = [
 
       <div class="flex flex-col items-center gap-8 md:flex-row md:justify-center">
         {
-          cards.map((card) => (
+          WHATS_INSIDE_CARDS.map((card) => (
             <div
               class:list={[
                 'min-h-[466px] w-full rounded-[28px] border border-black/5 bg-white p-[19px] md:w-[357px]',

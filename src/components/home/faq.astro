@@ -1,29 +1,7 @@
 ---
-import PlusIcon from '../ui/icons/PlusIcon.astro';
-import MinusIcon from '../ui/icons/MinusIcon.astro';
-
-const faqs = [
-  {
-    question: 'Cos\'è "servizi prodottizzati"?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
-  },
-  {
-    question: 'Devo già avere un servizio prodottizzato per entrare?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
-  },
-  {
-    question: 'Cosa differenzia Skool dal gruppo Telegram gratuito?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
-  },
-  {
-    question: "Posso annullare l'abbonamento quando voglio?",
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
-  },
-];
+import { FAQS } from '../../lib/const';
+import PlusIcon from '../ui/icons/plusicon.astro';
+import MinusIcon from '../ui/icons/minusicon.astro';
 ---
 
 <section class="relative overflow-hidden bg-white">
@@ -49,7 +27,7 @@ const faqs = [
 
     <div class="mx-auto mt-12 max-w-3xl text-left">
       {
-        faqs.map((faq) => (
+        FAQS.map((faq) => (
           <details class="faq-item group border-b border-[#0B0B0E1A] px-1 py-[26px]">
             <summary class="flex cursor-pointer items-center justify-between gap-8">
               <span class="text-lg leading-[1.5] font-medium text-black">{faq.question}</span>

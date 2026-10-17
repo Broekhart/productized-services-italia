@@ -1,31 +1,28 @@
 ---
-import Button from './ui/Button.astro';
-import Logo from './ui/Logo.astro';
-import { navLinks } from '../data/navigation';
+import Button from './ui/button.astro';
+import Logo from './ui/logo.astro';
+import { NAV_LINKS } from '../lib/const';
 ---
 
-<header class="bg-black py-4 text-white">
+<header class='absolute top-0 left-0 z-10 py-6 w-full text-white'>
   <div
-    class="px-container flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal"
-  >
-    <Logo class="md:justify-self-start" />
+    class='px-container flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal'>
+    <Logo class='md:justify-self-start' />
 
     <nav
-      aria-label="Navigazione principale"
-      class="hidden md:flex md:items-center md:justify-self-center md:gap-6"
-    >
+      aria-label='Navigazione principale'
+      class='hidden md:flex md:items-center md:justify-self-center md:gap-6'>
       {
-        navLinks.map((link) => (
+        NAV_LINKS.map((link) => (
           <a
             href={link.href}
-            class="text-base leading-none font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-          >
+            class='text-base leading-none font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'>
             {link.label}
           </a>
         ))
       }
     </nav>
 
-    <Button href="#" class="md:col-start-3 md:justify-self-end">Entra nella community</Button>
+    <Button href='#' class='md:col-start-3 md:justify-self-end'>Entra nella community</Button>
   </div>
 </header>

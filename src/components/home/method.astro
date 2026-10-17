@@ -1,20 +1,6 @@
 ---
-import Button from '../ui/Button.astro';
-
-const items = [
-  'Full-time o part-time: cosa scegliere',
-  'Costruire da solo o in team',
-  'Tenerlo semplice: il principio ASAP',
-  'Posizionarti senza bisogno di un grande pubblico',
-  'Definire i tuoi package e il pricing',
-  'Costruire un portfolio credibile',
-  'Trovare il primo cliente',
-  'Vendere senza fare call infinite',
-  'Gli errori più comuni da evitare',
-  'Gestire i pagamenti e i rinnovi',
-];
-
-const columns = [items.slice(0, 5), items.slice(5, 10)];
+import { METHOD_COLUMNS } from '../../lib/const';
+import Button from '../ui/button.astro';
 ---
 
 <section class="bg-[#FDFFEE]">
@@ -60,10 +46,10 @@ const columns = [items.slice(0, 5), items.slice(5, 10)];
       <div>
         <div class="grid grid-cols-1 gap-x-[47px] gap-y-6 sm:grid-cols-2">
           {
-            columns.map((column) => (
+            METHOD_COLUMNS.map((column) => (
               <ol class="flex flex-col gap-6">
                 {column.map((text, i) => {
-                  const number = String(column === columns[0] ? i + 1 : i + 6).padStart(2, '0');
+                  const number = String(column === METHOD_COLUMNS[0] ? i + 1 : i + 6).padStart(2, '0');
                   return (
                     <li class="flex gap-4 border-b border-black/10 pb-6 last:border-0 last:pb-0">
                       <span class="text-base leading-normal font-bold text-[#B44EEB]">{number}</span>

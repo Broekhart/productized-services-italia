@@ -1,27 +1,5 @@
 ---
-const cards = [
-  {
-    number: '01',
-    title: 'Isolamento',
-    body: 'Nessuno intorno a te capisce davvero cosa significa lavorare ad abbonamento. Ti confronti solo con freelance "a progetto" o agenzie tradizionali.',
-    icon: '/images/yellow-icon.webp',
-    glow: '#D1DF64',
-  },
-  {
-    number: '02',
-    title: 'Nessuna rete',
-    body: 'Non sai dove trovare i primi clienti, un collaboratore di fiducia, o qualcuno con cui fare partnership. Ogni opportunità la devi costruire da zero.',
-    icon: '/images/pink-icon.webp',
-    glow: '#FA5A6E',
-  },
-  {
-    number: '03',
-    title: 'Nessun metodo',
-    body: "Hai idee, ma manca un percorso chiaro: come strutturare l'offerta, il pricing, l'onboarding, senza reinventare la ruota.",
-    icon: '/images/purple-icon.webp',
-    glow: '#A855F7',
-  },
-];
+import { PROBLEM_CARDS } from '../../lib/const';
 ---
 
 <section class="relative bg-black text-white">
@@ -39,7 +17,7 @@ const cards = [
 
     <div class="mt-9 grid grid-cols-1 gap-4 md:grid-cols-3">
       {
-        cards.map((card) => (
+        PROBLEM_CARDS.map((card) => (
           <div
             class="glass-border problem-card rounded-3xl bg-white/5 pt-9 pr-[30px] pb-9 pl-[30px]"
             style={`--glow: ${card.glow}`}

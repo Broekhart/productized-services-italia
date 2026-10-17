@@ -1,42 +1,6 @@
 ---
-import Button from '../ui/Button.astro';
-
-const pills = [
-  { icon: '/images/search-icon.webp', text: 'Cerco un partner per la parte di delivery del mio servizio' },
-  { icon: '/images/users-icon.webp', text: 'Sto assumendo un secondo membro nel mio team' },
-  { icon: '/images/office-icon.webp', text: 'Cliente in cerca di un servizio prodottizzato per [settore]' },
-];
-
-const testimonials = [
-  {
-    initials: 'E',
-    color: '#FA5A6E',
-    name: 'Emanuele',
-    quote:
-      "Ciao a tutti, ho un cliente che ha uno store Shopify e sta cercando una figura che lo possa supportare nelle piccole modifiche o anche semplicemente quando c'è bisogno di fare qualche aggiornamento o se dovesse avere qualche problema/problematiche. Insomma, di base si tratta probabilmente di un contratto di manutenzione sullo Store. Per caso qualcuno di voi conosce qualcuno o è interessato a questa cosa?",
-  },
-  {
-    initials: 'AB',
-    color: '#D1DF64',
-    name: 'Alessandro B',
-    quote:
-      'Ciao ragazzi. Ho un potenziale cliente che mi ha chiamato per dare loro una mano. Startup costituita (srl) che vorrebbe creare prodotto. Hanno un buon inizio di funzionalità ma devono concentrarsi sulla creazione del prodotto lasciando il codice a un terzo. Cercano full stack dev per: CTO che prenda anche responsabilità…..',
-  },
-  {
-    initials: 'SV',
-    color: '#B44EEB',
-    name: 'Sofia Vicedomini',
-    quote:
-      "Ciao Ragazzi! Per una startup che sto seguendo gratuitamente: Figma già realizzato da un designer, principio di app in React native, per il backend stavamo pensando a Nodejs (Nest). C'è qualcuno che voglia entrare come CTO e prendere le quote? l'obiettivo è fare l'MVP, portarlo ad un angel / venture capital e far il primo round di investimento…..",
-  },
-  {
-    initials: 'S',
-    color: '#69DBFC',
-    name: 'Stefano',
-    quote:
-      "Ciao a tutti sono alla ricerca di uno sviluppatore web Full-Stack per lo sviluppo di Corsi al Cubo, una piattaforma pensata per supportare gli studenti nella preparazione ai test d'ammissione universitari (attualmente focalizzata su Bocconi). Il progetto ha già una Brand identity solida e definita e gli aspetti legali (privacy, termini e condizioni) sono già coperti. Cerco preferibilmente un CTO o un profilo..",
-  },
-];
+import { OPPORTUNITY_PILLS, OPPORTUNITY_TESTIMONIALS } from '../../lib/const';
+import Button from '../ui/button.astro';
 ---
 
 <section class="relative overflow-hidden bg-black">
@@ -58,7 +22,7 @@ const testimonials = [
 
         <div class="flex flex-1 flex-col gap-3">
           {
-            pills.map((pill) => (
+            OPPORTUNITY_PILLS.map((pill) => (
               <div class="flex items-center gap-3.5 rounded-2xl border border-[#0B0B0E17] bg-white p-4">
                 <img src={pill.icon} alt="" width="40" height="40" class="size-10 shrink-0" />
                 <p class="text-sm leading-normal font-semibold text-black">{pill.text}</p>
@@ -82,9 +46,9 @@ const testimonials = [
     <div class="mt-14 overflow-hidden">
       <div class="opportunity-track flex w-max gap-5 px-container">
         {
-          [...testimonials, ...testimonials].map((t, i) => (
+          [...OPPORTUNITY_TESTIMONIALS, ...OPPORTUNITY_TESTIMONIALS].map((t, i) => (
             <div
-              aria-hidden={i >= testimonials.length}
+              aria-hidden={i >= OPPORTUNITY_TESTIMONIALS.length}
               class="glass-border w-[420px] shrink-0 rounded-[24px] bg-white/10 pt-9 pr-[30px] pb-9 pl-[30px]"
             >
               <p class="text-base leading-normal font-medium text-white">{t.quote}</p>

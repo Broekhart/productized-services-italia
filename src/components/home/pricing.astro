@@ -1,24 +1,8 @@
 ---
-import Button from '../ui/Button.astro';
-import CheckCircleOutlineIcon from '../ui/icons/CheckCircleOutlineIcon.astro';
-import BurstBadgeIcon from '../ui/icons/BurstBadgeIcon.astro';
-
-const monthlyFeatures = [
-  'Accesso completo alla community',
-  'Corso completo incluso',
-  'Tutti i 5 moduli',
-  'Accesso al network e alle opportunità',
-  'Telegram gratuito',
-];
-
-const annualFeatures = [
-  'Risparmia 2 mesi con il piano annuale.',
-  'Accesso completo alla community',
-  'Corso completo incluso',
-  'Tutti i 5 moduli',
-  'Accesso al network e alle opportunità',
-  'Telegram gratuito',
-];
+import { ANNUAL_FEATURES, MONTHLY_FEATURES } from '../../lib/const';
+import Button from '../ui/button.astro';
+import CheckCircleOutlineIcon from '../ui/icons/checkcircleoutlineicon.astro';
+import BurstBadgeIcon from '../ui/icons/burstbadgeicon.astro';
 ---
 
 <section class="relative overflow-hidden bg-white">
@@ -61,7 +45,7 @@ const annualFeatures = [
 
         <ul class="mt-7 flex flex-col gap-4">
           {
-            monthlyFeatures.map((feature) => (
+            MONTHLY_FEATURES.map((feature) => (
               <li class="flex items-center gap-4">
                 <CheckCircleOutlineIcon class="size-6 shrink-0" />
                 <span class="text-base leading-[1.5] font-medium tracking-[-0.05em] text-black">{feature}</span>
@@ -103,7 +87,7 @@ const annualFeatures = [
 
         <ul class="mt-7 flex flex-col gap-4">
           {
-            annualFeatures.map((feature) => (
+            ANNUAL_FEATURES.map((feature) => (
               <li class="flex items-center gap-4">
                 <CheckCircleOutlineIcon class="size-6 shrink-0" />
                 <span class="text-base leading-[1.5] font-medium tracking-[-0.05em] text-black">{feature}</span>
