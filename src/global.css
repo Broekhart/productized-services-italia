@@ -22,6 +22,19 @@
   --font-body: 'Plus Jakarta Sans';
   --color-primary: #0852e9;
   --color-white: #fefefe;
+  --color-violet: #b44eeb;
+  --color-yellow: #d1df64;
+
+  @keyframes hero-glow-in {
+    from {
+      --glow-reach: 30%;
+      filter: brightness(0);
+    }
+    to {
+      --glow-reach: 100%;
+      filter: brightness(1);
+    }
+  }
 }
 
 @layer base {
@@ -66,7 +79,6 @@
   @apply py-container px-container;
 }
 
-/* Glassy 1px gradient border: bright along the top edge, fading towards the bottom. */
 .glass-border {
   position: relative;
 }
@@ -92,4 +104,23 @@
     linear-gradient(#000 0 0) content-box exclude,
     linear-gradient(#000 0 0);
   pointer-events: none;
+}
+
+@property --glow-reach {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@utility hero-glow {
+  mask-image: radial-gradient(
+    circle at 100% 100%,
+    #000 calc(var(--glow-reach) * 0.3),
+    transparent var(--glow-reach)
+  );
+  animation: hero-glow-in 2s linear both;
+}
+
+@utility bg-glass {
+  @apply bg-white/10 backdrop-blur-md backdrop-saturate-150 shadow-[inset_1px_1px_0_0_rgba(255,255,255,0.35),inset_-1px_-1px_0_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)];
 }

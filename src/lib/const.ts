@@ -177,19 +177,19 @@ export const PROBLEM_CARDS = [
 
 export const STATS_CARDS = [
   {
-    values: ['100+', '250+'],
+    value: '100+',
     label: 'membri attivi',
     cardClass: "bg-[url('/images/bg-spiral.webp')] bg-cover bg-center text-white",
   },
   {
-    values: ['5', '2', '1'],
-    label: 'workation già organizzato',
+    value: '1 - 2',
+    label: "workation all'anno",
     cardClass: 'bg-[#D1DF64] text-black',
   },
   {
-    values: ['K', 'W', 'X'],
+    value: '2',
     label: 'offerte di lavoro condivise ogni mese',
-    cardClass: 'bg-[#B44EEB61] text-white',
+    cardClass: "bg-[url('/images/bg-spiral-violet.webp')] bg-cover bg-center text-white",
   },
 ];
 
@@ -252,14 +252,3 @@ export const WHATS_INSIDE_CARDS = [
     body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
   },
 ];
-
-export const BUTTON_VARIANTS = {
-  translucent: 'bg-white/10 text-white focus-visible:outline-white',
-  solid: 'bg-black text-white focus-visible:outline-black',
-  outline: 'bg-white text-black border border-black/10 focus-visible:outline-black',
-};
-
-export const LOGO_SOURCES = {
-  default: { src: '/images/producticized-services-italia-logo.webp', width: 167, height: 41 },
-  white: { src: '/images/productized-services-italia-logo-white.webp', width: 300, height: 77 },
-};

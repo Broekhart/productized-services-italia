@@ -2,27 +2,28 @@
 import Button from './ui/button.astro';
 import Logo from './ui/logo.astro';
 import { NAV_LINKS } from '../lib/const';
+import ArrowIcon from './ui/icons/arrow.astro';
 ---
 
 <header class='absolute top-0 left-0 z-10 py-6 w-full text-white'>
-  <div
-    class='px-container flex items-center justify-between gap-4 md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal'>
+  <div class='px-container flex items-center justify-between gap-4'>
     <Logo class='md:justify-self-start' />
 
-    <nav
-      aria-label='Navigazione principale'
-      class='hidden md:flex md:items-center md:justify-self-center md:gap-6'>
+    <nav aria-label='Navigazione principale' class='hidden md:flex items-center gap-6'>
       {
         NAV_LINKS.map((link) => (
-          <a
-            href={link.href}
-            class='text-base leading-none font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'>
+          <a href={link.href} class='font-medium'>
             {link.label}
           </a>
         ))
       }
     </nav>
 
-    <Button href='#' class='md:col-start-3 md:justify-self-end'>Entra nella community</Button>
+    <Button
+      href='https://www.skool.com/productized-services-italia-4079/about'
+      target='_blank'
+      rel='noopener noreferrer'>
+      Entra nella community <ArrowIcon />
+    </Button>
   </div>
 </header>
