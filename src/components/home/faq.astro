@@ -1,7 +1,7 @@
 ---
 import { FAQS } from '../../lib/const';
-import PlusIcon from '../ui/icons/plusicon.astro';
-import MinusIcon from '../ui/icons/minusicon.astro';
+import Plus from '../ui/icons/plus.astro';
+import Minus from '../ui/icons/minus.astro';
 ---
 
 <section class="relative overflow-hidden bg-white">
@@ -32,8 +32,8 @@ import MinusIcon from '../ui/icons/minusicon.astro';
             <summary class="flex cursor-pointer items-center justify-between gap-8">
               <span class="text-lg leading-[1.5] font-medium text-black">{faq.question}</span>
               <span class="relative size-[17px] shrink-0">
-                <PlusIcon class="absolute inset-0 text-black group-open:hidden" />
-                <MinusIcon class="absolute inset-0 hidden text-black group-open:block" />
+                <Plus class="absolute inset-0 text-black group-open:hidden" />
+                <Minus class="absolute inset-0 hidden text-black group-open:block" />
               </span>
             </summary>
 

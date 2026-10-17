@@ -1,6 +1,6 @@
 ---
 import { VIDEO_THUMBNAIL, VIDEO_URL } from '../../lib/const';
-import PlayIcon from '../ui/icons/playicon.astro';
+import Play from '../ui/icons/play.astro';
 ---
 
 <section>
@@ -34,7 +34,7 @@ import PlayIcon from '../ui/icons/playicon.astro';
               style={{ backgroundImage: `url(${VIDEO_THUMBNAIL})` }}
             />
             <span class="absolute inset-0 flex items-center justify-center">
-              <PlayIcon aria-hidden="true" class="story-video-play size-[94px]" />
+              <Play aria-hidden="true" class="story-video-play size-[94px]" />
             </span>
           </a>
         ) : (

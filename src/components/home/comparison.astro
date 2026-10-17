@@ -1,9 +1,9 @@
 ---
 import { ROWS } from '../../lib/const';
 import Button from '../ui/button.astro';
-import TelegramIcon from '../ui/icons/telegramicon.astro';
-import CheckCircleIcon from '../ui/icons/checkcircleicon.astro';
-import CrossCircleIcon from '../ui/icons/crosscircleicon.astro';
+import Telegram from '../ui/icons/telegram.astro';
+import CheckCircle from '../ui/icons/checkcircle.astro';
+import CrossCircle from '../ui/icons/crosscircle.astro';
 ---
 
 <section class="overflow-hidden bg-white">
@@ -37,7 +37,7 @@ import CrossCircleIcon from '../ui/icons/crosscircleicon.astro';
           <div class="grid grid-cols-3">
             <div class="bg-white"></div>
             <div class="flex items-center gap-2.5 bg-[#69DBFC2E] px-6 py-5">
-              <TelegramIcon class="size-6 shrink-0" />
+              <Telegram class="size-6 shrink-0" />
               <span class="text-lg leading-[1.5] font-bold text-black">Gruppo Telegram</span>
             </div>
             <div class="flex items-center gap-2.5 bg-[#B44EEB] px-6 py-5">
@@ -56,18 +56,18 @@ import CrossCircleIcon from '../ui/icons/crosscircleicon.astro';
                 </div>
                 <div class="flex items-center bg-[#69DBFC12] px-6 py-5">
                   {row.telegram === 'check' ? (
-                    <CheckCircleIcon />
+                    <CheckCircle />
                   ) : row.telegram === 'cross' ? (
-                    <CrossCircleIcon />
+                    <CrossCircle />
                   ) : (
                     <span class="text-base leading-[1.5] font-normal text-black">{row.telegram}</span>
                   )}
                 </div>
                 <div class="flex items-center bg-[#B44EEB0F] px-6 py-5">
                   {row.skool === 'check' ? (
-                    <CheckCircleIcon />
+                    <CheckCircle />
                   ) : row.skool === 'cross' ? (
-                    <CrossCircleIcon />
+                    <CrossCircle />
                   ) : (
                     <span class="text-base leading-[1.5] font-normal text-black">{row.skool}</span>
                   )}
