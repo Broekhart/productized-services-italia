@@ -1,62 +1,44 @@
 ---
 import { NARROW_MODULES, WIDE_MODULES } from '../../lib/const';
+import Badge from '../ui/badge.astro';
 import Button from '../ui/button.astro';
+import Arrow from '../ui/icons/arrow.astro';
 ---
 
-<section class="bg-[#FBF7FF]">
-  <div class="px-container py-20">
-    <span class="inline-flex rounded-full bg-[#B44EEB1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#B44EEB] uppercase">
-      Il corso
-    </span>
+<section class='bg-white-violet'>
+  <div class='flex flex-col gap-15 p-container'>
+    <div class='flex flex-col items-start gap-4'>
+      <Badge variant='violet'> Il corso </Badge>
 
-    <h2 class="mt-[17px] max-w-2xl font-bold leading-[1.25] tracking-[-1px]">
-      5 moduli per costruire il tuo Productized Service.
-    </h2>
-
-    <div class="mt-12 flex flex-col items-center gap-8">
-      <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
-        {
-          WIDE_MODULES.map((mod) => (
-            <div
-              class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[600px]"
-              style={{ backgroundImage: `url(${mod.bg})` }}
-            >
-              <span class="absolute top-7 left-7 text-[119.89px] leading-[1.5] font-extrabold text-[#00000094] transition-colors duration-300 group-hover:text-black">
-                {mod.number}
-              </span>
-
-              <div class="absolute inset-x-0 bottom-0 h-[164px] rounded-[28px] bg-white px-6 pt-[35px] pb-6">
-                <h3 class="text-2xl leading-none font-bold text-black">{mod.title}</h3>
-                <p class="mt-2 max-w-[431px] text-base leading-[1.5] font-normal text-black/60">{mod.body}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-
-      <div class="flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
-        {
-          NARROW_MODULES.map((mod) => (
-            <div
-              class="group relative h-[358px] w-full overflow-hidden rounded-[28px] bg-cover bg-center lg:w-[392px]"
-              style={{ backgroundImage: `url(${mod.bg})` }}
-            >
-              <span class:list={['absolute top-7 left-7 text-[109.27px] leading-[1.5] font-extrabold', 'transition-colors duration-300', mod.numberClass ?? 'text-[#00000094] group-hover:text-black']}>
-                {mod.number}
-              </span>
-
-              <div class="absolute inset-x-0 bottom-0 h-[164px] rounded-[28px] bg-white px-6 pt-[35px] pb-6">
-                <h3 class="text-2xl leading-none font-bold text-black">{mod.title}</h3>
-                <p class="mt-2 max-w-[431px] text-base leading-[1.5] font-normal text-black/60">{mod.body}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
+      <h2 class='max-w-2xl'>5 moduli per costruire il tuo Productized Service.</h2>
     </div>
 
-    <div class="mt-12 text-center">
-      <Button href="#" variant="solid">Entra nella community Skool</Button>
+    <div class='grid grid-cols-6 gap-8'>
+      {
+        [...WIDE_MODULES, ...NARROW_MODULES].map((mod) => (
+          <div
+            class={`flex flex-col justify-between w-full relative rounded-[28px] bg-cover bg-center ${mod.number === '01' || mod.number === '02' ? 'col-span-3' : 'col-span-2'}`}
+            style={{ backgroundImage: `url(${mod.bg})` }}>
+            <span
+              class={`p-5 text-[119.89px] font-extrabold ${mod.number === '05' ? 'text-white/50' : 'text-black/58'} transition-colors duration-300`}>
+              {mod.number}
+            </span>
+
+            <div class='rounded-[28px] bg-white p-7.5 drop-shadow-xs'>
+              <h3 class='text-2xl'>{mod.title}</h3>
+              <p class='mt-2 text-base font-normal text-black/60'>{mod.body}</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
+
+    <Button
+      href='https://www.skool.com/productized-services-italia-4079/about'
+      target='_blank'
+      rel='noopener noreferrer'
+      variant='secondary'
+      class='self-center'>Entra nella community Skool <Arrow /></Button
+    >
   </div>
 </section>

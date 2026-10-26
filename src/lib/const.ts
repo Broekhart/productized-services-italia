@@ -110,37 +110,6 @@ export const OPPORTUNITY_PILLS = [
   { icon: '/images/office-icon.webp', text: 'Cliente in cerca di un servizio prodottizzato per [settore]' },
 ];
 
-export const OPPORTUNITY_TESTIMONIALS = [
-  {
-    initials: 'E',
-    color: '#FA5A6E',
-    name: 'Emanuele',
-    quote:
-      "Ciao a tutti, ho un cliente che ha uno store Shopify e sta cercando una figura che lo possa supportare nelle piccole modifiche o anche semplicemente quando c'è bisogno di fare qualche aggiornamento o se dovesse avere qualche problema/problematiche. Insomma, di base si tratta probabilmente di un contratto di manutenzione sullo Store. Per caso qualcuno di voi conosce qualcuno o è interessato a questa cosa?",
-  },
-  {
-    initials: 'AB',
-    color: '#D1DF64',
-    name: 'Alessandro B',
-    quote:
-      'Ciao ragazzi. Ho un potenziale cliente che mi ha chiamato per dare loro una mano. Startup costituita (srl) che vorrebbe creare prodotto. Hanno un buon inizio di funzionalità ma devono concentrarsi sulla creazione del prodotto lasciando il codice a un terzo. Cercano full stack dev per: CTO che prenda anche responsabilità…..',
-  },
-  {
-    initials: 'SV',
-    color: '#B44EEB',
-    name: 'Sofia Vicedomini',
-    quote:
-      "Ciao Ragazzi! Per una startup che sto seguendo gratuitamente: Figma già realizzato da un designer, principio di app in React native, per il backend stavamo pensando a Nodejs (Nest). C'è qualcuno che voglia entrare come CTO e prendere le quote? l'obiettivo è fare l'MVP, portarlo ad un angel / venture capital e far il primo round di investimento…..",
-  },
-  {
-    initials: 'S',
-    color: '#69DBFC',
-    name: 'Stefano',
-    quote:
-      "Ciao a tutti sono alla ricerca di uno sviluppatore web Full-Stack per lo sviluppo di Corsi al Cubo, una piattaforma pensata per supportare gli studenti nella preparazione ai test d'ammissione universitari (attualmente focalizzata su Bocconi). Il progetto ha già una Brand identity solida e definita e gli aspetti legali (privacy, termini e condizioni) sono già coperti. Cerco preferibilmente un CTO o un profilo..",
-  },
-];
-
 export const MONTHLY_FEATURES = [
   'Accesso completo alla community',
   'Corso completo incluso',

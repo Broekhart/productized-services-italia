@@ -4,72 +4,57 @@ import Button from '../ui/button.astro';
 import Telegram from '../ui/icons/telegram.astro';
 import CheckCircle from '../ui/icons/checkcircle.astro';
 import CrossCircle from '../ui/icons/crosscircle.astro';
+import Arrow from '../ui/icons/arrow.astro';
+import Badge from '../ui/badge.astro';
+import Skool from '../ui/icons/skool.astro';
 ---
 
-<section class="overflow-hidden bg-white">
-  <div class="px-container py-20">
-    <div class="flex flex-col items-center text-center">
-      <span class="inline-flex rounded-full bg-[#FA5A6E1A] px-3.5 py-1.5 text-sm leading-none font-bold text-[#FA5A6E] uppercase">
-        Confronto
-      </span>
+<section class='bg-white'>
+  <div class='flex flex-col gap-10 p-container'>
+    <div class='flex flex-col gap-4 items-center text-center'>
+      <Badge variant='dark-coral'> Confronto </Badge>
 
-      <h2 class="mt-[17px] max-w-2xl font-bold leading-[1.25] tracking-[-1px]">
-        Gratis per iniziare. A pagamento per evolvere.
-      </h2>
+      <h2 class='max-w-2xl'>Gratis per iniziare. A pagamento per evolvere.</h2>
     </div>
 
-    <div class="relative mt-12">
-      <img
-        src="/images/top-left-card.webp"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute top-0 left-0 hidden -translate-x-1/2 -translate-y-1/2 md:block"
-      />
-      <img
-        src="/images/bottom-right-card.webp"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute right-0 bottom-0 hidden translate-x-1/2 translate-y-1/2 md:block"
-      />
-
-      <div class="overflow-x-auto">
-        <div class="mx-auto w-[1116px] max-w-none overflow-hidden rounded-[28px] border border-black/10">
-          <div class="grid grid-cols-3">
-            <div class="bg-white"></div>
-            <div class="flex items-center gap-2.5 bg-[#69DBFC2E] px-6 py-5">
-              <Telegram class="size-6 shrink-0" />
-              <span class="text-lg leading-[1.5] font-bold text-black">Gruppo Telegram</span>
+    <div class='relative'>
+      <div class='overflow-x-auto'>
+        <div class='min-w-3xl rounded-[28px] overflow-hidden border border-black/10'>
+          <div class='grid grid-cols-3'>
+            <div class='bg-white'></div>
+            <div class='flex items-center gap-2.5 bg-[#69DBFC2E] px-6 py-5'>
+              <Telegram class='size-7 shrink-0' />
+              <span class='text-lg font-bold text-black'>Gruppo Telegram</span>
             </div>
-            <div class="flex items-center gap-2.5 bg-[#B44EEB] px-6 py-5">
-              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-bold text-[#1E1B4B]">
-                sk
-              </span>
-              <span class="text-lg leading-[1.5] font-bold text-white">Community Skool</span>
+            <div class='flex items-center gap-2.5 bg-[#B44EEB] px-6 py-5'>
+              <Skool class='size-7 shrink-0' />
+
+              <span class='text-lg font-bold text-white'>Community Skool</span>
             </div>
           </div>
 
           {
             ROWS.map((row) => (
-              <div class="grid grid-cols-3 border-t border-black/5">
-                <div class="flex items-center bg-white px-6 py-5">
-                  <span class="text-sm leading-[1.5] font-semibold text-black">{row.label}</span>
+              <div class='grid grid-cols-3 border-t border-black/5'>
+                <div class='flex items-center bg-white px-6 py-5'>
+                  <span class='text-sm font-semibold text-black'>{row.label}</span>
                 </div>
-                <div class="flex items-center bg-[#69DBFC12] px-6 py-5">
+                <div class='flex items-center bg-[#69DBFC12] px-6 py-5'>
                   {row.telegram === 'check' ? (
                     <CheckCircle />
                   ) : row.telegram === 'cross' ? (
                     <CrossCircle />
                   ) : (
-                    <span class="text-base leading-[1.5] font-normal text-black">{row.telegram}</span>
+                    <span>{row.telegram}</span>
                   )}
                 </div>
-                <div class="flex items-center bg-[#B44EEB0F] px-6 py-5">
+                <div class='flex items-center bg-[#B44EEB0F] px-6 py-5'>
                   {row.skool === 'check' ? (
                     <CheckCircle />
                   ) : row.skool === 'cross' ? (
                     <CrossCircle />
                   ) : (
-                    <span class="text-base leading-[1.5] font-normal text-black">{row.skool}</span>
+                    <span>{row.skool}</span>
                   )}
                 </div>
               </div>
@@ -79,10 +64,19 @@ import CrossCircle from '../ui/icons/crosscircle.astro';
       </div>
     </div>
 
-    <div class="mt-10 text-center">
-      <Button href="#" variant="solid">Entra nella community Skool</Button>
+    <div class='flex flex-col gap-4 items-center text-center'>
+      <Button
+        href='https://www.skool.com/productized-services-italia-4079/about'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='secondary'>Entra nella community Skool <Arrow /></Button
+      >
 
-      <a href="#" class="mt-4 block text-sm leading-none font-bold text-[#B44EEB]">
+      <a
+        href='https://t.me/+hQY7xF5CxSE1MDI0'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='text-sm font-bold text-violet underline'>
         Prova prima il gruppo Telegram gratis
       </a>
     </div>

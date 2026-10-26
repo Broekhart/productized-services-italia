@@ -30,6 +30,7 @@
   --color-dark: #0d0d0d;
   --color-white-violet: #fbf7ff;
   --animate-star-rotate: star-rotate 3s ease-in-out infinite;
+  --animate-hop: location-hop 3.2s ease-in-out infinite;
 
   @keyframes hero-glow-in {
     from {
@@ -57,6 +58,19 @@
 
     100% {
       transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes location-hop {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
     }
   }
 }
