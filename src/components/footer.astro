@@ -2,6 +2,7 @@
 import Logo from './ui/logo.astro';
 import Linkedin from './ui/icons/linkedin.astro';
 import Instagram from './ui/icons/instagram.astro';
+import Telegram from './ui/icons/telegram.astro';
 import { NAV_LINKS } from '../lib/const';
 ---
 
@@ -29,6 +30,12 @@ import { NAV_LINKS } from '../lib/const';
       <p class='text-sm leading-normal text-white/40'>© Productized Services Italia</p>
 
       <div class='flex items-center gap-4'>
+                <a
+          href='#'
+          aria-label='Telegram'
+          class='text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+          <Telegram outline class='size-5' />
+        </a>
         <a
           href='#'
           aria-label='LinkedIn'

@@ -194,6 +194,30 @@ export const TESTIMONIALS = [
       'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
     rating: 4,
   },
+    {
+    avatar: '/images/sean.webp',
+    name: 'Sean Rose',
+    role: 'Direttore Commerciale, Azienda Tecnologica',
+    quote:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
+    rating: 4,
+  },
+  {
+    avatar: '/images/dimetria.webp',
+    name: 'Demetria Giles',
+    role: 'Fondatore, Agenzia di Marketing',
+    quote:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
+    rating: 5,
+  },
+  {
+    avatar: '/images/ryan.webp',
+    name: 'Ryan Delk',
+    role: 'Partner, Società di Servizi Professionali',
+    quote:
+      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
+    rating: 4,
+  },
 ];
 
 export const TOUR_IMAGES = [

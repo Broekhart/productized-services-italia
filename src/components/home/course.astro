@@ -13,11 +13,11 @@ import Arrow from '../ui/icons/arrow.astro';
       <h2 class='max-w-2xl'>5 moduli per costruire il tuo Productized Service.</h2>
     </div>
 
-    <div class='grid grid-cols-6 gap-8'>
+    <div class='grid lg:grid-cols-6 gap-8'>
       {
         [...WIDE_MODULES, ...NARROW_MODULES].map((mod) => (
           <div
-            class={`flex flex-col justify-between w-full relative rounded-[28px] bg-cover bg-center ${mod.number === '01' || mod.number === '02' ? 'col-span-3' : 'col-span-2'}`}
+            class={`flex flex-col justify-between w-full relative rounded-[28px] bg-cover bg-center ${mod.number === '01' || mod.number === '02' ? 'lg:col-span-3' : 'lg:col-span-2'}`}
             style={{ backgroundImage: `url(${mod.bg})` }}>
             <span
               class={`p-5 text-[119.89px] font-extrabold ${mod.number === '05' ? 'text-white/50' : 'text-black/58'} transition-colors duration-300`}>

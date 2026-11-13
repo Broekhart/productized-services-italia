@@ -15,16 +15,9 @@ import Badge from '../ui/badge.astro';
     Add the skin source to your project for full control over its
     UI components.
    -->
-      <video-compat-skin
-        style='--media-accent-color: #f5c518; display: block; width: 100%; aspect-ratio: 16 / 9;'>
-        <!--
-        Media are players without UIs, handling networking
-        and display of the media. They are easily swappable
-        to handle different sources.
-      -->
-        <video
-          src='https://stream.mux.com/BV3YZtogl89mg9VcNBhhnHm02Y34zI1nlMuMQfAbl3dM/highest.mp4'
-          playsinline><a href='https://videojs.org/help'>Video player not working?</a></video
+      <video-compat-skin>
+        <video src='/vsl.mp4' playsinline loading='lazy'
+          ><a href='https://videojs.org/help'>Video player not working?</a></video
         >
       </video-compat-skin>
     </video-player>

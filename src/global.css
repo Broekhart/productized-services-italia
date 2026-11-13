@@ -29,8 +29,10 @@
   --color-cyan: #0d6e8c;
   --color-dark: #0d0d0d;
   --color-white-violet: #fbf7ff;
+  --color-yellow-bg: #fdffee;
   --animate-star-rotate: star-rotate 3s ease-in-out infinite;
   --animate-hop: location-hop 3.2s ease-in-out infinite;
+  --animate-testimonials: testimonials 15s linear infinite;
 
   @keyframes hero-glow-in {
     from {
@@ -71,6 +73,15 @@
     }
     50% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes testimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 }
@@ -170,4 +181,8 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+@utility pricing-cover {
+  background-image: repeating-conic-gradient(from 200deg at 75% -30%, #fa5a6e 0deg 8deg, #fc7183 8deg 16deg);
 }
