@@ -1,21 +1,22 @@
 {
-  "name": "productized-services-italia",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.15",
-    "tailwind-merge": "^3.7.0",
-    "tailwindcss": "^4.1.18"
-  },
-  "devDependencies": {
-    "sharp": "^0.35.5"
-  }
+	"name": "productized-services-italia",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "^3.7.4",
+		"@tailwindcss/vite": "^4.1.18",
+		"astro": "^5.16.15",
+		"tailwind-merge": "^3.7.0",
+		"tailwindcss": "^4.1.18"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.6.7",
+		"sharp": "^0.35.5"
+	}
 }

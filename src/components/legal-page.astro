@@ -1,12 +1,16 @@
 ---
-import Layout from './layout.astro';
+import Layout from "./layout.astro";
 
-const { title, metaTitle = `${title} | Productized Services Italia`, description } = Astro.props;
+const {
+	title,
+	metaTitle = `${title} | Productized Services Italia`,
+	description,
+} = Astro.props;
 ---
 
 <Layout title={metaTitle} description={description}>
-  <section class='flex flex-col gap-4 p-container mx-auto max-w-4xl pt-32'>
-    <h1 class="mb-6">{title}</h1>
-    <slot />
-  </section>
+	<section class="flex flex-col gap-4 p-container mx-auto max-w-4xl pt-32">
+		<h1 class="mb-6">{title}</h1>
+		<slot />
+	</section>
 </Layout>

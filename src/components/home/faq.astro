@@ -1,22 +1,26 @@
 ---
-import { FAQS } from '../../lib/const';
-import FAQLogo from '../ui/illustrations/faq-logo.astro';
-import Accordion from '../ui/accordion.astro';
-import Badge from '../ui/badge.astro';
+import { FAQS } from "../../lib/const";
+import Accordion from "../ui/accordion.astro";
+import Badge from "../ui/badge.astro";
+import FAQLogo from "../ui/illustrations/faq-logo.astro";
 ---
 
-<section id='faq' class='relative overflow-hidden'>
-  <FAQLogo class='animate-star-rotate absolute -top-15 -left-10' />
-  <FAQLogo class='animate-star-rotate absolute -bottom-15 -right-10 rotate-180' />
+<section id="faq" class="relative overflow-hidden">
+	<FAQLogo class="animate-star-rotate absolute -top-15 -left-10" />
+	<FAQLogo
+		class="animate-star-rotate absolute -bottom-15 -right-10 rotate-180"
+	/>
 
-  <div class='flex flex-col items-center gap-12 p-container'>
-    <div class='flex flex-col items-center text-center gap-4'>
-      <Badge variant='violet'> FAQ </Badge>
-      <h2>Domande frequenti</h2>
-    </div>
+	<div class="flex flex-col items-center gap-12 p-container">
+		<div class="flex flex-col items-center text-center gap-4">
+			<Badge variant="violet"> FAQ </Badge>
+			<h2>Domande frequenti</h2>
+		</div>
 
-    <div class='w-full flex flex-col gap-6.5 max-w-2xl'>
-      {FAQS.map((faq) => <Accordion title={faq.question}>{faq.answer}</Accordion>)}
-    </div>
-  </div>
+		<div class="w-full flex flex-col gap-6.5 max-w-2xl">
+			{FAQS.map((faq) => (
+				<Accordion title={faq.question}>{faq.answer}</Accordion>
+			))}
+		</div>
+	</div>
 </section>

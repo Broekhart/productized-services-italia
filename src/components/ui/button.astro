@@ -1,42 +1,41 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { twMerge } from 'tailwind-merge';
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
-type Variant = 'primary' | 'secondary' | 'outline';
+type Variant = "primary" | "secondary" | "outline";
 
 type Props =
-  | ({
-      variant?: Variant;
-    } & HTMLAttributes<'button'>)
-  | ({
-      variant?: Variant;
-      href: string;
-      disabled?: boolean;
-    } & HTMLAttributes<'a'>);
+	| ({
+			variant?: Variant;
+	  } & HTMLAttributes<"button">)
+	| ({
+			variant?: Variant;
+			href: string;
+			disabled?: boolean;
+	  } & HTMLAttributes<"a">);
 
-const { variant = 'primary', ...props } = Astro.props;
+const { variant = "primary", ...props } = Astro.props;
 
 const variantMap: Record<Variant, string> = {
-  primary: 'bg-glass text-white border border-white/10',
-  secondary: 'bg-black text-white hover:bg-violet-dark',
-  outline: 'bg-white text-black border border-black hover:bg-black hover:text-white',
+	primary: "bg-glass text-white border border-white/10",
+	secondary: "bg-black text-white hover:bg-violet-dark",
+	outline:
+		"bg-white text-black border border-black hover:bg-black hover:text-white",
 };
 
 const className = twMerge(
-  'flex items-center gap-2 rounded-xl py-3 px-6 text-sm font-bold aria-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed transition-colors',
-  variantMap[variant],
-  props.class,
+	"flex items-center gap-2 rounded-xl py-3 px-6 text-sm font-bold aria-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed transition-colors *:shrink-0",
+	variantMap[variant],
+	props.class,
 );
 ---
 
-{
-  'href' in props ? (
-    <a class={className} aria-disabled={props.disabled} {...props}>
-      <slot />
-    </a>
-  ) : (
-    <button class={className} {...props}>
-      <slot />
-    </button>
-  )
-}
+{"href" in props ? (
+	<a class={className} aria-disabled={props.disabled} {...props}>
+		<slot />
+	</a>
+) : (
+	<button class={className} {...props}>
+		<slot />
+	</button>
+)}

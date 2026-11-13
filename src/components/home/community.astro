@@ -1,111 +1,125 @@
 ---
-import Button from '../ui/button.astro';
-import Arrow from '../ui/icons/arrow.astro';
-import Badge from '../ui/badge.astro';
-import Stars from '../ui/icons/stars.astro';
-import WavyArrow from '../ui/icons/wavyarrow.astro';
+import Badge from "../ui/badge.astro";
+import Button from "../ui/button.astro";
+import Arrow from "../ui/icons/arrow.astro";
+import Stars from "../ui/icons/stars.astro";
+import WavyArrow from "../ui/icons/wavyarrow.astro";
 ---
 
-<section class='bg-white'>
-    <div id='community' class='p-container grid gap-12 lg:grid-cols-2 lg:items-start'>
-    <div class='flex flex-col items-start gap-4'>
-      <Badge variant='dark-coral'>Incontri dal vivo</Badge>
+<section class="bg-white">
+	<div
+		id="community"
+		class="p-container grid gap-12 lg:grid-cols-2 lg:items-start"
+	>
+		<div class="flex flex-col items-start gap-4">
+			<Badge variant="dark-coral">Incontri dal vivo</Badge>
 
-      <h2>
-        Più di una semplice community: organizziamo incontri dal vivo perché crediamo nella forza delle
-        relazioni anche fuori dallo schermo.
-      </h2>
+			<h2>
+				Più di una semplice community: organizziamo incontri dal vivo perché
+				crediamo nella forza delle relazioni anche fuori dallo schermo.
+			</h2>
 
-      <p class='text-black/60'>
-        Nella community si parla di prezzi, fidelizzazione, posizionamento e vendita. Ma soprattutto, non sei
-        solo. Nel 2025 ci siamo incontrati a Tenerife per il primo workation della community.
-      </p>
+			<p class="text-black/60">
+				Nella community si parla di prezzi, fidelizzazione, posizionamento e
+				vendita. Ma soprattutto, non sei solo. Nel 2025 ci siamo incontrati a
+				Tenerife per il primo workation della community.
+			</p>
 
-      <Button
-        href='https://www.skool.com/productized-services-italia-4079/about'
-        target='_blank'
-        rel='noopener noreferrer'
-        variant='secondary'
-        class='mt-6'>Entra nella community <Arrow /></Button
-      >
-    </div>
+			<Button
+				href="https://www.skool.com/productized-services-italia-4079/about"
+				target="_blank"
+				rel="noopener noreferrer"
+				variant="secondary"
+				class="mt-6"
+				>Entra nella community <Arrow /></Button
+			>
+		</div>
 
-    <div class='flex flex-col gap-3.5'>
-      <div
-        class="px-5 py-7.5 rounded-[28px] bg-[url('/images/bg-spiral-violet.webp')] bg-cover bg-center text-white">
-        <p class='text-2xl font-semibold'>
-          Altri workation in arrivo in tutta Europa. Chi fa parte della community Pro ha accesso prioritario ai
-          posti, sempre limitati.
-        </p>
-      </div>
+		<div class="flex flex-col gap-3.5">
+			<div
+				class="px-5 py-7.5 rounded-[28px] bg-[url('/images/bg-spiral-violet.webp')] bg-cover bg-center text-white"
+			>
+				<p class="text-2xl font-semibold">
+					Altri workation in arrivo in tutta Europa. Chi fa parte della
+					community Pro ha accesso prioritario ai posti, sempre limitati.
+				</p>
+			</div>
 
-      <div class='grid grid-cols-2 gap-3.5'>
-        <div
-          class="flex flex-col justify-end relative rounded-[28px] bg-[url('/images/location-card-bg.webp')] bg-cover bg-center px-5 py-7.5">
-          <img
-            src='/images/location-icon.webp'
-            alt=''
-            width='33'
-            height='54'
-            class='animate-hop h-13.5 w-8.25'
-          />
-          <p class='text-xl font-semibold text-white'>Tenerife, già fatto</p>
-          <img
-            src='/images/purple-emoji.webp'
-            alt=''
-            aria-hidden='true'
-            width='46'
-            height='47'
-            class='absolute top-6 right-4 h-11.75 w-11.5'
-          />
-        </div>
+			<div class="grid grid-cols-2 gap-3.5">
+				<div
+					class="flex flex-col justify-end relative rounded-[28px] bg-[url('/images/location-card-bg.webp')] bg-cover bg-center px-5 py-7.5"
+				>
+					<img
+						src="/images/location-icon.webp"
+						alt=""
+						width="33"
+						height="54"
+						class="animate-hop h-13.5 w-8.25"
+					>
+					<p class="text-xl font-semibold text-white">Tenerife, già fatto</p>
+					<img
+						src="/images/purple-emoji.webp"
+						alt=""
+						aria-hidden="true"
+						width="46"
+						height="47"
+						class="absolute top-6 right-4 h-11.75 w-11.5"
+					>
+				</div>
 
-        <div
-          class="flex flex-col justify-end relative rounded-[28px] bg-[url('/images/yellow-card-bg.webp')] bg-cover bg-center px-5 py-7.5">
-          <img
-            src='/images/red-location-icon.webp'
-            alt=''
-            width='33'
-            height='54'
-            class='animate-hop h-13.5 w-8.25'
-          />
-          <div class='flex flex-col gap-2'>
-            <p class='font-semibold text-xl'>Prossima destinazione da annunciare</p>
-            <a
-              href='https://t.me/+hQY7xF5CxSE1MDI0'
-              target='_blank'
-              rel='noopener noreferrer'
-              class='text-sm font-bold text-violet underline'>
-              Resta aggiornato entrando sul gruppo Telegram
-            </a>
-          </div>
-          <img
-            src='/images/orange-cool-head.webp'
-            alt=''
-            aria-hidden='true'
-            width='39'
-            height='46'
-            class='absolute top-6.5 right-6.5 h-11.5 w-9.75'
-          />
-        </div>
-      </div>
+				<div
+					class="flex flex-col justify-end relative rounded-[28px] bg-[url('/images/yellow-card-bg.webp')] bg-cover bg-center px-5 py-7.5"
+				>
+					<img
+						src="/images/red-location-icon.webp"
+						alt=""
+						width="33"
+						height="54"
+						class="animate-hop h-13.5 w-8.25"
+					>
+					<div class="flex flex-col gap-2">
+						<p class="font-semibold text-xl">
+							Prossima destinazione da annunciare
+						</p>
+						<a
+							href="https://t.me/+hQY7xF5CxSE1MDI0"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-sm font-bold text-violet underline"
+						>
+							Resta aggiornato entrando sul gruppo Telegram
+						</a>
+					</div>
+					<img
+						src="/images/orange-cool-head.webp"
+						alt=""
+						aria-hidden="true"
+						width="39"
+						height="46"
+						class="absolute top-6.5 right-6.5 h-11.5 w-9.75"
+					>
+				</div>
+			</div>
 
-      <div class='relative mt-5.5'>
-        <WavyArrow class='absolute top-0 left-0 hidden md:block' />
-        <div
-          class='flex flex-col gap-3.5 border border-black/10 rounded-[28px] bg-[#0000000A] p-6 md:ml-[10%] md:max-w-103.25'>
-          <Stars />
-          <p class='font-semibold italic'>"Top 2 decisioni di carriera prese nel 2026"</p>
-          <div class='flex items-center gap-3'>
-            <img
-              src='/images/testimonials/zambo.webp'
-              alt='Federico Zambelli'
-              class='size-10 shrink-0 rounded-full object-cover'
-            />
-            <p class='text-sm font-medium'>Federico Zambelli, Data Engineer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+			<div class="relative mt-5.5">
+				<WavyArrow class="absolute top-0 left-0 hidden md:block" />
+				<div
+					class="flex flex-col gap-3.5 border border-black/10 rounded-[28px] bg-[#0000000A] p-6 md:ml-[10%] md:max-w-103.25"
+				>
+					<Stars />
+					<p class="font-semibold italic">
+						"Top 2 decisioni di carriera prese nel 2026"
+					</p>
+					<div class="flex items-center gap-3">
+						<img
+							src="/images/testimonials/zambo.webp"
+							alt="Federico Zambelli"
+							class="size-10 shrink-0 rounded-full object-cover"
+						>
+						<p class="text-sm font-medium">Federico Zambelli, Data Engineer</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>

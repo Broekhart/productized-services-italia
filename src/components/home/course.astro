@@ -1,44 +1,47 @@
 ---
-import { NARROW_MODULES, WIDE_MODULES } from '../../lib/const';
-import Badge from '../ui/badge.astro';
-import Button from '../ui/button.astro';
-import Arrow from '../ui/icons/arrow.astro';
+import { NARROW_MODULES, WIDE_MODULES } from "../../lib/const";
+import Badge from "../ui/badge.astro";
+import Button from "../ui/button.astro";
+import Arrow from "../ui/icons/arrow.astro";
 ---
 
-<section id='corso' class='bg-white-violet'>
-  <div class='flex flex-col gap-15 p-container'>
-    <div class='flex flex-col items-start gap-4'>
-      <Badge variant='violet'> Il corso </Badge>
+<section id="corso" class="bg-white-violet">
+	<div class="flex flex-col gap-15 p-container">
+		<div class="flex flex-col items-start gap-4">
+			<Badge variant="violet"> Il corso </Badge>
 
-      <h2 class='max-w-2xl'>5 moduli per costruire il tuo servizio prodottizzato.</h2>
-    </div>
+			<h2 class="max-w-2xl">
+				5 moduli per costruire il tuo servizio prodottizzato.
+			</h2>
+		</div>
 
-    <div class='grid lg:grid-cols-6 gap-8'>
-      {
-        [...WIDE_MODULES, ...NARROW_MODULES].map((mod) => (
-          <div
-            class={`flex flex-col justify-between w-full relative rounded-[28px] bg-cover bg-center ${mod.number === '01' || mod.number === '02' ? 'lg:col-span-3' : 'lg:col-span-2'}`}
-            style={{ backgroundImage: `url(${mod.bg})` }}>
-            <span
-              class={`p-5 text-[119.89px] font-extrabold ${mod.number === '05' ? 'text-white/50' : 'text-black/58'} transition-colors duration-300`}>
-              {mod.number}
-            </span>
+		<div class="grid lg:grid-cols-6 gap-8">
+			{[...WIDE_MODULES, ...NARROW_MODULES].map((mod) => (
+				<div
+					class={`flex flex-col justify-between w-full relative rounded-[28px] bg-cover bg-center ${mod.number === "01" || mod.number === "02" ? "lg:col-span-3" : "lg:col-span-2"}`}
+					style={{ backgroundImage: `url(${mod.bg})` }}
+				>
+					<span
+						class={`p-5 text-[119.89px] font-extrabold ${mod.number === "05" ? "text-white/50" : "text-black/58"} transition-colors duration-300`}
+					>
+						{mod.number}
+					</span>
 
-            <div class='rounded-[28px] bg-white p-7.5 drop-shadow-xs'>
-              <h3 class='text-2xl'>{mod.title}</h3>
-              <p class='mt-2 text-base font-normal text-black/60'>{mod.body}</p>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+					<div class="rounded-[28px] bg-white p-7.5 drop-shadow-xs">
+						<h3 class="text-2xl">{mod.title}</h3>
+						<p class="mt-2 text-base font-normal text-black/60">{mod.body}</p>
+					</div>
+				</div>
+			))}
+		</div>
 
-    <Button
-      href='https://www.skool.com/productized-services-italia-4079/about'
-      target='_blank'
-      rel='noopener noreferrer'
-      variant='secondary'
-      class='self-center'>Entra nella community Skool <Arrow /></Button
-    >
-  </div>
+		<Button
+			href="https://www.skool.com/productized-services-italia-4079/about"
+			target="_blank"
+			rel="noopener noreferrer"
+			variant="secondary"
+			class="self-center"
+			>Entra nella community Skool <Arrow /></Button
+		>
+	</div>
 </section>

@@ -1,45 +1,63 @@
 ---
-import { OPPORTUNITY_PILLS } from '../../lib/const';
-import Badge from '../ui/badge.astro';
-import Button from '../ui/button.astro';
-import Arrow from '../ui/icons/arrow.astro';
+import { OPPORTUNITY_PILLS } from "../../lib/const";
+import Badge from "../ui/badge.astro";
+import Button from "../ui/button.astro";
+import Arrow from "../ui/icons/arrow.astro";
 ---
 
-<section id='lavoro' class='relative'>
-  <div class="absolute inset-0 bg-[url('/images/gradient-bg.webp')] bg-cover bg-bottom"></div>
+<section id="lavoro" class="relative">
+	<div
+		class="absolute inset-0 bg-[url('/images/gradient-bg.webp')] bg-cover bg-bottom"
+	></div>
 
-  <div class='relative p-container flex flex-col items-center gap-8 text-center'>
-    <div class='flex flex-col items-center gap-4'>
-      <Badge variant='dark-yellow'> Opportunità </Badge>
+	<div
+		class="relative p-container flex flex-col items-center gap-8 text-center"
+	>
+		<div class="flex flex-col items-center gap-4">
+			<Badge variant="dark-yellow"> Opportunità </Badge>
 
-      <h2 class='text-white'>Le occasioni di lavoro nascono dentro alla community, non fuori.</h2>
-    </div>
+			<h2 class="text-white">
+				Le occasioni di lavoro nascono dentro alla community, non fuori.
+			</h2>
+		</div>
 
-    <div class='flex flex-col gap-7.5 rounded-3xl bg-white/10 lg:flex-row p-6 lg:px-13.5 lg:py-11.5'>
-      <img src='/images/people-gathering.webp' class='object-cover rounded-[14px]' />
+		<div
+			class="flex flex-col gap-7.5 rounded-3xl bg-white/10 lg:flex-row p-6 lg:px-13.5 lg:py-11.5"
+		>
+			<img
+				alt="People gathering"
+				src="/images/people-gathering.webp"
+				class="object-cover rounded-[14px]"
+			>
 
-      <div class='flex flex-col gap-3 h-full text-sm text-[#161219]'>
-        {
-          OPPORTUNITY_PILLS.map((pill) => (
-            <div class='flex items-center gap-4 rounded-[14px] border border-[#0B0B0E17] bg-white p-3.5'>
-              <img src={pill.icon} alt='' width='50' height='50' class='size-12.5 shrink-0' />
-              <p class='font-semibold'>{pill.text}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
+			<div class="flex flex-col gap-3 h-full text-sm text-[#161219]">
+				{OPPORTUNITY_PILLS.map((pill) => (
+					<div class="flex items-center gap-4 rounded-[14px] border border-[#0B0B0E17] bg-white p-3.5">
+						<img
+							src={pill.icon}
+							alt=""
+							width="50"
+							height="50"
+							class="size-12.5 shrink-0"
+						/>
+						<p class="font-semibold">{pill.text}</p>
+					</div>
+				))}
+			</div>
+		</div>
 
-    <p class='max-w-3xl text-white/80'>
-      Con l’accesso Pro sblocchi una bacheca dedicata dove i membri pubblicano e trovano collaborazioni tra
-      professionisti, clienti in cerca di professionisti e posizioni aperte nella community.
-    </p>
+		<p class="max-w-3xl text-white/80">
+			Con l’accesso Pro sblocchi una bacheca dedicata dove i membri pubblicano e
+			trovano collaborazioni tra professionisti, clienti in cerca di
+			professionisti e posizioni aperte nella community.
+		</p>
 
-    <Button
-      href='https://www.skool.com/productized-services-italia-4079/about'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='mt-2'>Entra nella community <Arrow /></Button
-    >
-  </div>
+		<Button
+			href="https://www.skool.com/productized-services-italia-4079/about"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="mt-2"
+			>Entra nella community <Arrow /></Button
+		>
+	</div>
 </section>

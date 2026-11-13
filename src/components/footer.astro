@@ -1,64 +1,76 @@
 ---
-import Logo from './ui/logo.astro';
-import Linkedin from './ui/icons/linkedin.astro';
-import Instagram from './ui/icons/instagram.astro';
-import Telegram from './ui/icons/telegram.astro';
-import { LEGAL_LINKS, NAV_LINKS } from '../lib/const';
+import { LEGAL_LINKS, NAV_LINKS } from "../lib/const";
+import Instagram from "./ui/icons/instagram.astro";
+import Linkedin from "./ui/icons/linkedin.astro";
+import Telegram from "./ui/icons/telegram.astro";
+import Logo from "./ui/logo.astro";
 ---
 
-<footer class='bg-black text-white'>
-  <div class='px-container pt-10 pb-17 md:pt-16'>
-    <div class='flex flex-wrap items-center justify-between gap-4'>
-      <Logo variant='light' />
+<footer class="bg-black text-white">
+	<div class="px-container pt-10 pb-17 md:pt-16">
+		<div class="flex flex-wrap items-center justify-between gap-4">
+			<Logo variant="light" />
 
-      <nav aria-label='Link del footer' class='flex flex-wrap items-center gap-6'>
-        {
-          NAV_LINKS.map((link) => (
-            <a
-              href={link.href}
-              class='text-base leading-normal font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'>
-              {link.label}
-            </a>
-          ))
-        }
-      </nav>
-    </div>
+			<nav
+				aria-label="Link del footer"
+				class="flex flex-wrap items-center gap-6"
+			>
+				{NAV_LINKS.map((link) => (
+					<a
+						href={link.href}
+						class="text-base leading-normal font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+					>
+						{link.label}
+					</a>
+				))}
+			</nav>
+		</div>
 
-    <hr class='mt-8 border-t border-white/5' />
+		<hr class="mt-8 border-t border-white/5">
 
-    <div class='mt-5 flex flex-wrap items-center justify-between gap-4'>
-      <p class='text-sm leading-normal text-white/40'>© Productized Services Italia · Niccolò Ruggieri · P. IVA 02155270677</p>
+		<div class="mt-5 flex flex-wrap items-center justify-between gap-4">
+			<p class="text-sm leading-normal text-white/40">
+				© Productized Services Italia · Niccolò Ruggieri · P. IVA 02155270677
+			</p>
 
-      <div class='flex items-center gap-4'>
-        <a
-          href='https://t.me/+hQY7xF5CxSE1MDI0'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Telegram'
-          class='text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
-          <Telegram outline class='size-5' />
-        </a>
-        <a
-          href='https://www.linkedin.com/company/productized-services-italia'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='LinkedIn'
-          class='text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
-          <Linkedin class='size-6' />
-        </a>
-        <a
-          href='https://www.instagram.com/productizedservicesitalia/'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Instagram'
-          class='text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
-          <Instagram class='size-5' />
-        </a>
-      </div>
-    </div>
-
-    <nav aria-label='Link legali' class='mt-5 flex flex-wrap gap-5 text-sm text-white/60'>
-      {LEGAL_LINKS.map((link) => <a href={link.href} class='underline'>{link.label}</a>)}
-    </nav>
-  </div>
+			<div class="flex flex-wrap items-center gap-6">
+				<nav class="flex gap-4 text-sm text-white/60">
+					{LEGAL_LINKS.map((link) => (
+						<a href={link.href} class="underline">
+							{link.label}
+						</a>
+					))}
+				</nav>
+				<div class="flex items-center gap-4">
+					<a
+						href="https://t.me/+hQY7xF5CxSE1MDI0"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Telegram"
+						class="text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					>
+						<Telegram outline class="size-5" />
+					</a>
+					<a
+						href="https://www.linkedin.com/company/productized-services-italia"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="LinkedIn"
+						class="text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					>
+						<Linkedin class="size-6" />
+					</a>
+					<a
+						href="https://www.instagram.com/productizedservicesitalia/"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Instagram"
+						class="text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					>
+						<Instagram class="size-5" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>

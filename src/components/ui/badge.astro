@@ -1,30 +1,35 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { twMerge } from 'tailwind-merge';
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
-type Variant = 'dark-yellow' | 'light-yellow' | 'light-coral' | 'dark-coral' | 'violet';
+type Variant =
+	| "dark-yellow"
+	| "light-yellow"
+	| "light-coral"
+	| "dark-coral"
+	| "violet";
 
 type Props = {
-  variant?: Variant;
-} & HTMLAttributes<'div'>;
+	variant?: Variant;
+} & HTMLAttributes<"div">;
 
-const { variant = 'dark-yellow', ...props } = Astro.props;
+const { variant = "dark-yellow", ...props } = Astro.props;
 
 const variantMap: Record<Variant, string> = {
-  'dark-yellow': 'bg-white/10 text-yellow',
-  'light-yellow': 'bg-yellow/30 text-yellow-dark',
-  'light-coral': 'bg-white/30 text-white',
-  'dark-coral': 'bg-coral/10 text-coral',
-  violet: 'bg-violet/10 text-violet',
+	"dark-yellow": "bg-white/10 text-yellow",
+	"light-yellow": "bg-yellow/30 text-yellow-dark",
+	"light-coral": "bg-white/30 text-white",
+	"dark-coral": "bg-coral/10 text-coral",
+	violet: "bg-violet/10 text-violet",
 };
 
 const className = twMerge(
-  'w-auto flex rounded-full px-4 py-2 text-sm font-bold uppercase',
-  variantMap[variant],
-  props.class,
+	"w-auto flex rounded-full px-4 py-2 text-sm font-bold uppercase",
+	variantMap[variant],
+	props.class,
 );
 ---
 
 <div class={className} {...props}>
-  <slot />
+	<slot />
 </div>

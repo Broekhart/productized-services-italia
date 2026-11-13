@@ -1,22 +1,26 @@
 ---
-import { TOUR_IMAGES } from '../../lib/const';
-import Badge from '../ui/badge.astro';
+import { TOUR_IMAGES } from "../../lib/const";
+import Badge from "../ui/badge.astro";
 ---
 
-<section class='bg-white-violet'>
-  <div class='flex flex-col gap-9.5 p-container'>
-    <div class='flex flex-col gap-4 items-center text-center'>
-      <Badge variant='violet'> Vivi momenti così </Badge>
+<section class="bg-white-violet">
+	<div class="flex flex-col gap-9.5 p-container">
+		<div class="flex flex-col gap-4 items-center text-center">
+			<Badge variant="violet"> Vivi momenti così </Badge>
 
-      <h2>Lavorare, esplorare e crescere insieme.</h2>
-    </div>
+			<h2>Lavorare, esplorare e crescere insieme.</h2>
+		</div>
 
-    <div class='flex gap-9.5 overflow-x-auto scrollbar-hidden'>
-      {
-        TOUR_IMAGES.map((src) => (
-          <img src={src} alt='' width='426' height='545' class='rounded-4xl object-cover' />
-        ))
-      }
-    </div>
-  </div>
+		<div class="flex gap-9.5 overflow-x-auto scrollbar-hidden">
+			{TOUR_IMAGES.map((src) => (
+				<img
+					src={src}
+					alt=""
+					width="426"
+					height="545"
+					class="rounded-4xl object-cover"
+				/>
+			))}
+		</div>
+	</div>
 </section>

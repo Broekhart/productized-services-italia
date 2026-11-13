@@ -1,52 +1,66 @@
 ---
-import '../global.css';
-import Header from './header.astro';
-import Footer from './footer.astro';
+import "../global.css";
+import CookieConsent from "./cookie-consent.astro";
+import Footer from "./footer.astro";
+import Header from "./header.astro";
 
 const {
-  title = 'Servizi prodottizzati per freelance | Community Italia',
-  description = 'Impara a creare, vendere e gestire servizi prodottizzati. Entra nella community italiana per freelance, segui il corso e trova nuove opportunità.',
+	title = "Servizi prodottizzati per freelance | Community Italia",
+	description = "Impara a creare, vendere e gestire servizi prodottizzati. Entra nella community italiana per freelance, segui il corso e trova nuove opportunità.",
 } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const socialImageUrl = new URL('/og-graph.png', Astro.site);
+const socialImageUrl = new URL("/og-graph.png", Astro.site);
 ---
 
 <!doctype html>
-<html lang='it' class='scroll-smooth'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <link rel='sitemap' href='/sitemap-index.xml' />
-    <link rel='canonical' href={canonicalUrl} />
-    <meta name='generator' content={Astro.generator} />
-    <meta name='description' content={description} />
-    <meta name='author' content='Productized Services Italia' />
+<html lang="it" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="sitemap" href="/sitemap-index.xml">
+		<link rel="canonical" href={canonicalUrl}>
+		<meta name="generator" content={Astro.generator}>
+		<meta name="description" content={description}>
+		<meta name="author" content="Productized Services Italia">
 
-    <!-- Open Graph / Facebook -->
-    <meta property='og:type' content='website' />
-    <meta property='og:url' content={canonicalUrl} />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:image' content={socialImageUrl} />
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content={canonicalUrl}>
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:image" content={socialImageUrl}>
 
-    <!-- Twitter -->
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:url' content={canonicalUrl} />
-    <meta name='twitter:title' content={title} />
-    <meta name='twitter:description' content={description} />
-    <meta name='twitter:image' content={socialImageUrl} />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:url" content={canonicalUrl}>
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		<meta name="twitter:image" content={socialImageUrl}>
 
-    <title>{title}</title>
-    <link rel='preload' href='/fonts/plus-jakarta-sans-variable.ttf' as='font' type='font/ttf' crossorigin />
-    <link rel='preload' href='/fonts/libre-baskerville-variable.ttf' as='font' type='font/ttf' crossorigin />
-    <slot name='head' />
-  </head>
-  <body class='bg-white font-body'>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+		<title>{title}</title>
+		<link
+			rel="preload"
+			href="/fonts/plus-jakarta-sans-variable.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		>
+		<link
+			rel="preload"
+			href="/fonts/libre-baskerville-variable.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		>
+		<slot name="head" />
+		<CookieConsent />
+	</head>
+	<body class="bg-white font-body">
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>

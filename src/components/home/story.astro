@@ -1,20 +1,26 @@
 ---
-import Badge from '../ui/badge.astro';
+import Badge from "../ui/badge.astro";
 ---
 
-<section class='relative py-container' id="storia">
-  <div class="absolute top-0 left-0 w-full h-110 bg-[url('/images/bg-spiral.webp')] bg-cover bg-center"></div>
-  <div class='flex flex-col gap-10.5 relative px-container'>
-    <div class='flex flex-col gap-4 items-start text-white'>
-      <Badge variant='light-coral'> La storia dietro la community </Badge>
-      <h2 class='max-w-4xl'>Perché esiste Productized Services Italia e come può aiutarti?</h2>
-    </div>
-    <video-player>
-      <video-compat-skin>
-        <video src='/vsl.mp4' playsinline loading='lazy'
-          ><a href='https://videojs.org/help'>Video player not working?</a></video
-        >
-      </video-compat-skin>
-    </video-player>
-  </div>
+<section class="relative py-container" id="storia">
+	<div
+		class="absolute top-0 left-0 w-full h-110 bg-[url('/images/bg-spiral.webp')] bg-cover bg-center"
+	></div>
+	<div class="flex flex-col gap-10.5 relative px-container">
+		<div class="flex flex-col gap-4 items-start text-white">
+			<Badge variant="light-coral"> La storia dietro la community </Badge>
+			<h2 class="max-w-4xl">
+				Perché esiste Productized Services Italia e come può aiutarti?
+			</h2>
+		</div>
+		<video-player>
+			<video-compat-skin>
+				<video src="/vsl.mp4" playsinline loading="lazy"
+					><a href="https://videojs.org/help"
+						>Video player not working?</a
+					></video
+				>
+			</video-compat-skin>
+		</video-player>
+	</div>
 </section>

@@ -1,78 +1,103 @@
 ---
-import { LIFETIME_FEATURES, PLAN_FEATURES } from '../../lib/const';
-import Button from '../ui/button.astro';
-import CheckCircleOutline from '../ui/icons/checkcircleoutline.astro';
-import Badge from '../ui/badge.astro';
-import Arrow from '../ui/icons/arrow.astro';
+import { LIFETIME_FEATURES, PLAN_FEATURES } from "../../lib/const";
+import Badge from "../ui/badge.astro";
+import Button from "../ui/button.astro";
+import Arrow from "../ui/icons/arrow.astro";
+import CheckCircleOutline from "../ui/icons/checkcircleoutline.astro";
 ---
 
 <section>
-  <div class='text-white bg-coral pricing-cover'>
-    <div class='flex flex-col items-start gap-4 p-container lg:h-110'>
-      <Badge variant='light-coral'>Scegli il tuo piano</Badge>
+	<div class="text-white bg-coral pricing-cover">
+		<div class="flex flex-col items-start gap-4 p-container lg:h-110">
+			<Badge variant="light-coral">Scegli il tuo piano</Badge>
 
-      <h2 class='max-w-3xl'>Tutto ciò che ti serve per costruire il tuo servizio prodottizzato.</h2>
-    </div>
-  </div>
+			<h2 class="max-w-3xl">
+				Tutto ciò che ti serve per costruire il tuo servizio prodottizzato.
+			</h2>
+		</div>
+	</div>
 
-  <div class='relative p-container -mt-45 grid lg:grid-cols-2 items-start gap-8'>
-    <div id='pricing' class='flex flex-col gap-7 rounded-2xl border border-black/5 bg-white p-8 shadow-sm'>
-      <span class='font-bold tracking-wider text-coral uppercase'> Piano annuale </span>
+	<div
+		class="relative p-container -mt-45 grid lg:grid-cols-2 items-start gap-8"
+	>
+		<div
+			id="pricing"
+			class="flex flex-col gap-7 rounded-2xl border border-black/5 bg-white p-8 shadow-sm"
+		>
+			<span class="font-bold tracking-wider text-coral uppercase">
+				Piano annuale
+			</span>
 
-      <div class='flex items-baseline gap-2'>
-        <h3 class='text-h1 font-bold'>$350</h3>
-        <span class='font-semibold text-black/60'>/anno</span>
-      </div>
+			<div class="flex items-baseline gap-2">
+				<h3 class="text-h1 font-bold">$350</h3>
+				<span class="font-semibold text-black/60">/anno</span>
+			</div>
 
-      <p class='text-black/60'>
-        Un anno di accesso alla community, al corso completo e alle opportunità riservate ai membri.
-      </p>
+			<p class="text-black/60">
+				Un anno di accesso alla community, al corso completo e alle opportunità
+				riservate ai membri.
+			</p>
 
-      <hr class='border border-gray-200' />
+			<hr class="border border-gray-200">
 
-      <ul class='flex flex-col gap-4'>
-        {
-          PLAN_FEATURES.map((feature) => (
-            <li class='flex items-center gap-4 font-medium'>
-              <CheckCircleOutline class='size-6 shrink-0' />
-              {feature}
-            </li>
-          ))
-        }
-      </ul>
+			<ul class="flex flex-col gap-4">
+				{PLAN_FEATURES.map((feature) => (
+					<li class="flex items-center gap-4 font-medium">
+						<CheckCircleOutline class="size-6 shrink-0" />
+						{feature}
+					</li>
+				))}
+			</ul>
 
-      <Button href='https://www.skool.com/productized-services-italia-4079/about' target='_blank' rel='noopener noreferrer' variant='outline' class='w-full justify-center'> Entra nella community Skool <Arrow/> </Button>
-    </div>
+			<Button
+				href="https://www.skool.com/productized-services-italia-4079/about"
+				target="_blank"
+				rel="noopener noreferrer"
+				variant="outline"
+				class="w-full justify-center"
+			>
+				Entra nella community Skool <Arrow />
+			</Button>
+		</div>
 
-    <div class='relative flex flex-col gap-7 rounded-2xl border-[3px] border-black bg-white p-8 shadow-sm'>
-      <span class='font-bold tracking-wider text-coral uppercase'> Piano lifetime </span>
+		<div
+			class="relative flex flex-col gap-7 rounded-2xl border-[3px] border-black bg-white p-8 shadow-sm"
+		>
+			<span class="font-bold tracking-wider text-coral uppercase">
+				Piano lifetime
+			</span>
 
-      <div class='flex flex-wrap font-bold items-baseline gap-3'>
-        <p class='text-h1 text-black'>$550</p>
-        <span class='text-base font-semibold text-black/60'>una tantum</span>
-      </div>
+			<div class="flex flex-wrap font-bold items-baseline gap-3">
+				<p class="text-h1 text-black">$550</p>
+				<span class="text-base font-semibold text-black/60">una tantum</span>
+			</div>
 
-      <p class='text-black/60'>
-        Accesso completo al corso e alle opportunità, con accesso a vita alla community.
-      </p>
+			<p class="text-black/60">
+				Accesso completo al corso e alle opportunità, con accesso a vita alla
+				community.
+			</p>
 
-      <hr class='border border-gray-200' />
+			<hr class="border border-gray-200">
 
-      <ul class='flex flex-col gap-4'>
-        {
-          LIFETIME_FEATURES.map((feature) => (
-            <li class='flex items-center gap-4 font-medium'>
-              <CheckCircleOutline class='size-6 shrink-0' />
-              {feature}
-            </li>
-          ))
-        }
-      </ul>
+			<ul class="flex flex-col gap-4">
+				{LIFETIME_FEATURES.map((feature) => (
+					<li class="flex items-center gap-4 font-medium">
+						<CheckCircleOutline class="size-6 shrink-0" />
+						{feature}
+					</li>
+				))}
+			</ul>
 
-      <Button variant="secondary" href='https://cal.com/niccolo-ruggieri/lifetime-skool' target='_blank' rel='noopener noreferrer' class='mt-8 w-full justify-center'>
-        Prenota il piano lifetime
-        <Arrow />
-      </Button>
-    </div>
-  </div>
+			<Button
+				variant="secondary"
+				href="https://cal.com/niccolo-ruggieri/lifetime-skool"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mt-8 w-full justify-center"
+			>
+				Prenota il piano lifetime
+				<Arrow />
+			</Button>
+		</div>
+	</div>
 </section>

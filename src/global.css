@@ -1,187 +1,233 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @font-face {
-  font-family: 'Libre Baskerville';
-  src: url('/fonts/libre-baskerville-variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
+	font-family: "Libre Baskerville";
+	src: url("/fonts/libre-baskerville-variable.ttf") format("truetype");
+	font-weight: 100 900;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/plus-jakarta-sans-variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
+	font-family: "Plus Jakarta Sans";
+	src: url("/fonts/plus-jakarta-sans-variable.ttf") format("truetype");
+	font-weight: 100 900;
+	font-display: swap;
 }
 
 @theme {
-  --text-h1: 4rem;
-  --text-h2: 3rem;
-  --text-h3: 2rem;
-  --font-heading: 'Libre Baskerville';
-  --font-body: 'Plus Jakarta Sans';
-  --color-coral: #fa5a6e;
-  --color-white: #fefefe;
-  --color-violet: #b44eeb;
-  --color-violet-dark: #7a2ba0;
-  --color-yellow: #d1df64;
-  --color-yellow-dark: #6b7515;
-  --color-cyan: #0d6e8c;
-  --color-white-violet: #fbf7ff;
-  --color-yellow-bg: #fdffee;
-  --animate-star-rotate: star-rotate 3s ease-in-out infinite;
-  --animate-hop: location-hop 3.2s ease-in-out infinite;
-  --animate-testimonials: testimonials 15s linear infinite;
+	--text-h1: 4rem;
+	--text-h2: 3rem;
+	--text-h3: 2rem;
+	--font-heading: "Libre Baskerville";
+	--font-body: "Plus Jakarta Sans";
+	--color-coral: #fa5a6e;
+	--color-white: #fefefe;
+	--color-violet: #b44eeb;
+	--color-violet-dark: #7a2ba0;
+	--color-yellow: #d1df64;
+	--color-yellow-dark: #6b7515;
+	--color-cyan: #0d6e8c;
+	--color-white-violet: #fbf7ff;
+	--color-yellow-bg: #fdffee;
+	--animate-star-rotate: star-rotate 3s ease-in-out infinite;
+	--animate-hop: location-hop 3.2s ease-in-out infinite;
+	--animate-testimonials: testimonials 15s linear infinite;
 
-  @keyframes hero-glow-in {
-    from {
-      --glow-reach: 30%;
-      filter: brightness(0);
-    }
-    to {
-      --glow-reach: 100%;
-      filter: brightness(1);
-    }
-  }
+	@keyframes hero-glow-in {
+		from {
+			--glow-reach: 30%;
+			filter: brightness(0);
+		}
+		to {
+			--glow-reach: 100%;
+			filter: brightness(1);
+		}
+	}
 
-  @keyframes star-rotate {
-    0% {
-      transform: rotate(-20deg);
-    }
+	@keyframes star-rotate {
+		0% {
+			transform: rotate(-20deg);
+		}
 
-    25% {
-      transform: rotate(-10deg);
-    }
+		25% {
+			transform: rotate(-10deg);
+		}
 
-    50% {
-      transform: rotate(-0deg);
-    }
+		50% {
+			transform: rotate(-0deg);
+		}
 
-    100% {
-      transform: rotate(-20deg);
-    }
-  }
+		100% {
+			transform: rotate(-20deg);
+		}
+	}
 
-  @keyframes location-hop {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(0);
-    }
-  }
+	@keyframes location-hop {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateY(-10px);
+		}
+		50% {
+			transform: translateY(0);
+		}
+	}
 
-  @keyframes testimonials {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+	@keyframes testimonials {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
 }
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply font-heading text-balance leading-none font-bold;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply font-heading text-balance leading-none font-bold;
+	}
 
-  h1 {
-    @apply text-h2 md:text-h1;
-  }
+	h1 {
+		@apply text-h2 md:text-h1;
+	}
 
-  h2 {
-    @apply text-h3 md:text-h2;
-  }
+	h2 {
+		@apply text-h3 md:text-h2;
+	}
 
-  h3 {
-    @apply text-2xl md:text-h3;
-  }
+	h3 {
+		@apply text-2xl md:text-h3;
+	}
 
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
+	h4 {
+		@apply text-xl md:text-2xl;
+	}
 
-  b {
-    @apply font-bold;
-  }
+	b {
+		@apply font-bold;
+	}
 }
 
 @utility py-container {
-  @apply py-10 md:py-16;
+	@apply py-10 md:py-16;
 }
 
 @utility px-container {
-  @apply w-[min(1280px,100%-2rem)] mx-auto;
+	@apply w-[min(1280px,100%-2rem)] mx-auto;
 }
 
 @utility p-container {
-  @apply py-container px-container;
+	@apply py-container px-container;
 }
 
 @utility border-glass {
-  position: relative;
+	position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(
-      170deg,
-      rgb(255 255 255 / 0.55) 0%,
-      rgb(255 255 255 / 0.18) 35%,
-      rgb(255 255 255 / 0.12) 70%,
-      rgb(255 255 255 / 0.28) 100%
-    );
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#000 0 0) content-box exclude,
-      linear-gradient(#000 0 0);
-    pointer-events: none;
-  }
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		padding: 1px;
+		border-radius: inherit;
+		background: linear-gradient(
+			170deg,
+			rgb(255 255 255 / 0.55) 0%,
+			rgb(255 255 255 / 0.18) 35%,
+			rgb(255 255 255 / 0.12) 70%,
+			rgb(255 255 255 / 0.28) 100%
+		);
+		-webkit-mask:
+			linear-gradient(#000 0 0) content-box,
+			linear-gradient(#000 0 0);
+		-webkit-mask-composite: xor;
+		mask:
+			linear-gradient(#000 0 0) content-box exclude,
+			linear-gradient(#000 0 0);
+		pointer-events: none;
+	}
 }
 
 @property --glow-reach {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 0%;
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
 }
 
 @utility hero-glow {
-  mask-image: radial-gradient(
-    circle at 100% 100%,
-    #000 calc(var(--glow-reach) * 0.3),
-    transparent var(--glow-reach)
-  );
-  animation: hero-glow-in 2s linear both;
+	mask-image: radial-gradient(
+		circle at 100% 100%,
+		#000 calc(var(--glow-reach) * 0.3),
+		transparent var(--glow-reach)
+	);
+	animation: hero-glow-in 2s linear both;
 }
 
 @utility bg-glass {
-  @apply bg-white/10 backdrop-blur-md backdrop-saturate-150 shadow-[inset_1px_1px_0_0_rgba(255,255,255,0.35),inset_-1px_-1px_0_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)];
+	@apply bg-white/10 backdrop-blur-md backdrop-saturate-150 shadow-[inset_1px_1px_0_0_rgba(255,255,255,0.35),inset_-1px_-1px_0_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.25)];
 }
 
 @utility scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 @utility pricing-cover {
-  background-image: repeating-conic-gradient(from 200deg at 75% -30%, #fa5a6e 0deg 8deg, #fc7183 8deg 16deg);
+	background-image: repeating-conic-gradient(
+		from 200deg at 75% -30%,
+		#fa5a6e 0deg 8deg,
+		#fc7183 8deg 16deg
+	);
+}
+
+#termsfeed-com---nb {
+	position: fixed;
+	bottom: 0;
+	padding: 1rem;
+	max-width: 600px;
+}
+
+.cc-nb-title {
+	font-size: 1rem !important;
+	margin-bottom: 0.5rem !important;
+}
+
+.cc-nb-buttons-container {
+	display: flex !important;
+}
+
+.cc-nb-text-container p,
+.cc-nb-buttons-container button {
+	font-size: 0.875rem !important;
+}
+
+.cc-nb-main-container {
+	padding: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+	#termsfeed-com---nb {
+		max-width: none;
+		width: 100%;
+	}
+
+	.cc-nb-text-container {
+		height: 80px;
+		overflow-y: auto;
+		margin-bottom: 1rem;
+	}
+
+	.cc-nb-buttons-container button {
+		padding: 0;
+	}
 }
