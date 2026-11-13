@@ -4,10 +4,11 @@ import Header from './header.astro';
 import Footer from './footer.astro';
 
 const {
-  title = 'Home',
-  description = 'Productized Services Italia - We help businesses grow by providing top-notch sales solutions and strategies.',
+  title = 'Servizi prodottizzati per freelance | Community Italia',
+  description = 'Impara a creare, vendere e gestire servizi prodottizzati. Entra nella community italiana per freelance, segui il corso e trova nuove opportunità.',
 } = Astro.props;
-const fullTitle = `Productized Services Italia - ${title}`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImageUrl = new URL('/og-graph.png', Astro.site);
 ---
 
 <!doctype html>
@@ -16,25 +17,27 @@ const fullTitle = `Productized Services Italia - ${title}`;
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <link rel='canonical' href={canonicalUrl} />
     <meta name='generator' content={Astro.generator} />
     <meta name='description' content={description} />
     <meta name='author' content='Productized Services Italia' />
 
     <!-- Open Graph / Facebook -->
     <meta property='og:type' content='website' />
-    <meta property='og:url' content='https://www.productizedservicesitalia.it/' />
-    <meta property='og:title' content={fullTitle} />
+    <meta property='og:url' content={canonicalUrl} />
+    <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta property='og:image' content='https://www.productizedservicesitalia.it/og-graph.png' />
+    <meta property='og:image' content={socialImageUrl} />
 
     <!-- Twitter -->
-    <meta property='twitter:card' content='summary_large_image' />
-    <meta property='twitter:url' content='https://www.productizedservicesitalia.it/' />
-    <meta property='twitter:title' content={fullTitle} />
-    <meta property='twitter:description' content={description} />
-    <meta property='twitter:image' content='https://www.productizedservicesitalia.it/og-graph.png' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:url' content={canonicalUrl} />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={socialImageUrl} />
 
-    <title>{fullTitle}</title>
+    <title>{title}</title>
     <link rel='preload' href='/fonts/plus-jakarta-sans-variable.ttf' as='font' type='font/ttf' crossorigin />
     <link rel='preload' href='/fonts/libre-baskerville-variable.ttf' as='font' type='font/ttf' crossorigin />
     <slot name='head' />

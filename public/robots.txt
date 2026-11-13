@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.productizedservicesitalia.it/sitemap-index.xml
