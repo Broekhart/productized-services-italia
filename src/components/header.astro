@@ -2,33 +2,101 @@
 import { NAV_LINKS } from "../lib/const";
 import Button from "./ui/button.astro";
 import Arrow from "./ui/icons/arrow.astro";
+import Burger from "./ui/icons/burger.astro";
 import Logo from "./ui/logo.astro";
 
 const path = Astro.url.pathname;
 ---
 
-<header class={`absolute top-0 left-0 z-10 py-6 w-full text-white ${path !== '/' ? 'bg-black' : ''}`}>
-  <div class='px-container flex items-center justify-between gap-4'>
-    <a href='/'><Logo class='md:justify-self-start' /></a>
+<header
+	class={`absolute top-0 left-0 z-10 py-6 w-full text-white ${path !== "/" ? "bg-black" : ""}`}
+>
+	<div class="px-container flex items-center justify-between gap-4">
+		<a href="/"><Logo class="md:justify-self-start" /></a>
 
-    <nav aria-label='Navigazione principale' class='hidden md:flex items-center gap-6'>
-      {
-        NAV_LINKS.map((link) => (
-          <a href={link.href} class='font-medium'>
-            {link.label}
-          </a>
-        ))
-      }
-    </nav>
+		<nav
+			aria-label="Navigazione principale"
+			class="hidden md:flex items-center gap-6"
+		>
+			{NAV_LINKS.map((link) => (
+				<a href={link.href} class="font-medium">
+					{link.label}
+				</a>
+			))}
+		</nav>
 
-    <Button
-      href='https://www.skool.com/productized-services-italia-4079/about'
-      target='_blank'
-      rel='noopener noreferrer'
-      class="hidden md:flex">
-      Entra nella community <Arrow />
-    </Button>
-    
-    <button class="lg:hidden" id="burger-menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 18C3.71667 18 3.47917 17.9042 3.2875 17.7125C3.09583 17.5208 3 17.2833 3 17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16H20C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17C21 17.2833 20.9042 17.5208 20.7125 17.7125C20.5208 17.9042 20.2833 18 20 18H4ZM4 13C3.71667 13 3.47917 12.9042 3.2875 12.7125C3.09583 12.5208 3 12.2833 3 12C3 11.7167 3.09583 11.4792 3.2875 11.2875C3.47917 11.0958 3.71667 11 4 11H20C20.2833 11 20.5208 11.0958 20.7125 11.2875C20.9042 11.4792 21 11.7167 21 12C21 12.2833 20.9042 12.5208 20.7125 12.7125C20.5208 12.9042 20.2833 13 20 13H4ZM4 8C3.71667 8 3.47917 7.90417 3.2875 7.7125C3.09583 7.52083 3 7.28333 3 7C3 6.71667 3.09583 6.47917 3.2875 6.2875C3.47917 6.09583 3.71667 6 4 6H20C20.2833 6 20.5208 6.09583 20.7125 6.2875C20.9042 6.47917 21 6.71667 21 7C21 7.28333 20.9042 7.52083 20.7125 7.7125C20.5208 7.90417 20.2833 8 20 8H4Z" fill="currentColor"></path> </svg></button>
-  </div>
+		<Button
+			href="https://www.skool.com/productized-services-italia-4079/about"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="hidden md:flex"
+		>
+			Entra nella community <Arrow />
+		</Button>
+
+		<button
+			type="button"
+			aria-label="Apri il menu"
+			class="lg:hidden"
+			id="burger-menu"
+		>
+			<Burger />
+		</button>
+	</div>
+	<div class="hidden fixed inset-0 bg-black text-white z-90">
+		<div
+			class="sticky top-0 px-4 py-6 h-screen flex flex-col justify-between gap-4"
+		>
+			<div class="flex items-center justify-between">
+				<Logo />
+				<button type="button" id="burger-menu-close">
+					<svg
+						width="30"
+						height="30"
+						viewBox="0 0 30 30"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<title>Chiudi il menu</title>
+						<path
+							d="M15 16.3172L8.65876 22.6588C8.48564 22.8317 8.26804 22.9202 8.00595 22.9244C7.74408 22.9283 7.52251 22.8398 7.34126 22.6588C7.16022 22.4775 7.0697 22.2579 7.0697 22C7.0697 21.7421 7.16022 21.5225 7.34126 21.3413L13.6828 15L7.34126 8.65875C7.16835 8.48563 7.07981 8.26802 7.07564 8.00594C7.07168 7.74406 7.16022 7.5225 7.34126 7.34125C7.52251 7.16021 7.7421 7.06969 8.00001 7.06969C8.25793 7.06969 8.47751 7.16021 8.65876 7.34125L15 13.6828L21.3413 7.34125C21.5144 7.16833 21.732 7.07979 21.9941 7.07562C22.256 7.07167 22.4775 7.16021 22.6588 7.34125C22.8398 7.5225 22.9303 7.74208 22.9303 8C22.9303 8.25792 22.8398 8.4775 22.6588 8.65875L16.3172 15L22.6588 21.3413C22.8317 21.5144 22.9202 21.732 22.9244 21.9941C22.9283 22.2559 22.8398 22.4775 22.6588 22.6588C22.4775 22.8398 22.2579 22.9303 22 22.9303C21.7421 22.9303 21.5225 22.8398 21.3413 22.6588L15 16.3172Z"
+							fill="white"
+						></path>
+					</svg>
+				</button>
+			</div>
+			<nav class="flex flex-col gap-4">
+				{NAV_LINKS.map((link) => (
+					<a class="text-2xl flex justify-between" href={link.href}>
+						{link.label}
+						<Arrow class="size-6" />
+					</a>
+				))}
+			</nav>
+			<Button
+				href="https://www.skool.com/productized-services-italia-4079/about"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="self-start"
+			>
+				Entra nella community <Arrow />
+			</Button>
+		</div>
+	</div>
 </header>
+
+<script>
+const burgerMenu = document.getElementById("burger-menu") as HTMLButtonElement;
+const burgerMenuClose = document.getElementById(
+	"burger-menu-close",
+) as HTMLButtonElement;
+const menu = document.querySelector(".fixed") as HTMLDivElement;
+
+burgerMenu.addEventListener("click", () => {
+	menu.classList.remove("hidden");
+});
+
+burgerMenuClose.addEventListener("click", () => {
+	menu.classList.add("hidden");
+});
+</script>

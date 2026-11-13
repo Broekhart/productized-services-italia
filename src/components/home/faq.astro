@@ -6,12 +6,14 @@ import FAQLogo from "../ui/illustrations/faq-logo.astro";
 ---
 
 <section id="faq" class="relative overflow-hidden">
-	<FAQLogo class="animate-star-rotate absolute -top-15 -left-10" />
 	<FAQLogo
-		class="animate-star-rotate absolute -bottom-15 -right-10 rotate-180"
+		class="animate-star-rotate absolute w-40 md:size-auto -top-35 md:-top-15 -left-10"
+	/>
+	<FAQLogo
+		class="animate-star-rotate absolute w-40 md:size-auto -bottom-35 md:-bottom-15 -right-10 rotate-180"
 	/>
 
-	<div class="flex flex-col items-center gap-12 p-container">
+	<div class="relative flex flex-col items-center gap-12 p-container">
 		<div class="flex flex-col items-center text-center gap-4">
 			<Badge variant="violet"> FAQ </Badge>
 			<h2>Domande frequenti</h2>

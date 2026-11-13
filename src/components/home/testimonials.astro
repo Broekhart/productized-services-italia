@@ -9,10 +9,10 @@ import Badge from "../ui/badge.astro";
 	></div>
 	<div class="absolute inset-0 bg-black/70"></div>
 	<div
-		class="pointer-events-none absolute top-0 left-0 z-10 h-full w-60 bg-linear-to-r from-black to-transparent"
+		class="hidden md:block pointer-events-none absolute top-0 left-0 z-10 h-full w-60 bg-linear-to-r from-black to-transparent"
 	></div>
 	<div
-		class="pointer-events-none absolute top-0 right-0 z-10 h-full w-60 bg-linear-to-l from-black to-transparent"
+		class="hidden md:block pointer-events-none absolute top-0 right-0 z-10 h-full w-60 bg-linear-to-l from-black to-transparent"
 	></div>
 
 	<div class="flex flex-col gap-4 relative">
@@ -27,38 +27,21 @@ import Badge from "../ui/badge.astro";
 		<div
 			class="mt-9 flex w-full gap-6 animate-testimonials hover:[animation-play-state:paused]"
 		>
-			{[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
-				<div
-					aria-hidden={i >= TESTIMONIALS.length}
-					class="max-w-105 border-glass shrink-0 rounded-3xl bg-white/5 py-9 px-7.5"
-				>
+			{[...TESTIMONIALS, ...TESTIMONIALS].map((t) => (
+				<div class="max-w-105 border-glass shrink-0 rounded-3xl bg-white/5 text-white py-9 px-7.5">
 					<div class="flex items-center gap-3">
-						{t.avatar ? (
-							<img
-								src={t.avatar}
-								alt=""
-								class="size-11 shrink-0 rounded-full object-cover"
-							/>
-						) : (
-							<span
-								class="grid size-11 shrink-0 place-items-center rounded-full bg-violet font-bold text-white"
-								aria-hidden="true"
-							>
-								{t.name
-									.split(" ")
-									.map((part) => part[0])
-									.join("")}
-							</span>
-						)}
+						<img
+							src={t.avatar}
+							alt={t.name}
+							class="size-11 shrink-0 rounded-full object-cover"
+						/>
 						<div>
-							<p class="text-base font-normal text-[#F4F0FF]">{t.name}</p>
-							<p class="text-xs font-normal text-[#EFEDFD99]">{t.role}</p>
+							<p>{t.name}</p>
+							<p class="text-xs text-white/60">{t.role}</p>
 						</div>
 					</div>
 
-					<p class="mt-4 text-base font-normal text-[#FEFEFE]">
-						&ldquo;{t.quote}&rdquo;
-					</p>
+					<p class="mt-4">"{t.quote}"</p>
 				</div>
 			))}
 		</div>
