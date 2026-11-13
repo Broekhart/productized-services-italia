@@ -6,9 +6,10 @@ import Header from "./header.astro";
 import PostHog from "./posthog.astro";
 
 const {
-	title = "Servizi prodottizzati per freelance | Community Italia",
+	title = "Productized Services Italia | Community per freelance italiani",
 	description = "Impara a creare, vendere e gestire servizi prodottizzati. Entra nella community italiana per freelance, segui il corso e trova nuove opportunità.",
 } = Astro.props;
+
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const socialImageUrl = new URL("/og-graph.png", Astro.site);
 ---

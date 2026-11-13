@@ -9,6 +9,9 @@ const {
 ---
 
 <Layout title={metaTitle} description={description}>
+	<Fragment slot="head">
+		<meta name="robots" content="noindex">
+	</Fragment>
 	<section class="flex flex-col gap-4 p-container mx-auto max-w-4xl pt-32">
 		<h1 class="mb-6">{title}</h1>
 		<slot />
