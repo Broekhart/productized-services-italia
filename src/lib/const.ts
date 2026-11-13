@@ -200,6 +200,8 @@ export const TOUR_IMAGES = [
   '/images/tour2.webp',
   '/images/tour3.webp',
   '/images/tour4.webp',
+  '/images/tour5.webp',
+
 ];
 
 export const WHATS_INSIDE_CARDS = [
