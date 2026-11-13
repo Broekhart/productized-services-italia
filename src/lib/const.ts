@@ -6,10 +6,16 @@ import PurpleMascotte from '../components/ui/illustrations/purple-mascotte.astro
 import YellowMascotte from '../components/ui/illustrations/yellow-mascotte.astro';
 
 export const NAV_LINKS = [
-  { label: 'Community', href: '#' },
-  { label: 'Corso', href: '#' },
-  { label: 'Lavoro', href: '#' },
-  { label: 'FAQ', href: '#' },
+  {label: 'Storia', href: '#storia' },
+  { label: 'Community', href: '#community' },
+  { label: 'Corso', href: '#corso' },
+  { label: 'Lavoro', href: '#lavoro' },
+  { label: 'FAQ', href: '#faq' },
+];
+
+export const LEGAL_LINKS = [
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Cookie', href: '/cookie' },
 ];
 
 export const ROWS: {
@@ -17,14 +23,14 @@ export const ROWS: {
   telegram: string | 'check' | 'cross';
   skool: string | 'check' | 'cross';
 }[] = [
-  { label: 'Accesso', telegram: 'Gratuito', skool: 'Abbonamento mensile' },
+  { label: 'Accesso', telegram: 'Gratuito', skool: 'Abbonamento' },
   {
     label: 'Community',
     telegram: 'Chat libera con 250+ membri',
     skool: 'Spazio strutturato, classifiche, percorsi',
   },
   { label: 'Bacheca lavoro', telegram: 'cross', skool: 'check' },
-  { label: 'Corso "Servizi Prodottizzati"', telegram: 'cross', skool: 'check' },
+  { label: 'Corso "Servizi prodottizzati"', telegram: 'cross', skool: 'check' },
   { label: 'Workation', telegram: 'Annunci pubblici', skool: 'Accesso prioritario ai posti' },
   { label: 'Supporto/feedback diretto', telegram: 'Informale', skool: 'Strutturato' },
 ];
@@ -33,14 +39,14 @@ export const WIDE_MODULES = [
   {
     number: '01',
     bg: '/images/purple-bg-patch.webp',
-    title: 'Introduzione ai Productized Services',
-    body: 'Scopri il modello e cosa rende un servizio realmente productized.',
+    title: 'Introduzione ai servizi prodottizzati',
+    body: 'La mia storia, esempi concreti e i primi passi per iniziare.',
   },
   {
     number: '02',
     bg: '/images/red-bg-patch.webp',
     title: 'Productizza il tuo servizio',
-    body: "Trasforma la tua esperienza in un'offerta chiara e strutturata.",
+    body: 'Unbundling, formati di vendita, scope e discovery offer per costruire la tua offerta.',
   },
 ];
 
@@ -48,84 +54,77 @@ export const NARROW_MODULES = [
   {
     number: '03',
     bg: '/images/lemon-bg-patch.webp',
-    title: 'Come distinguerti su LinkedIn',
-    body: 'Costruisci un posizionamento forte e raggiungi le persone giuste.',
+    title: 'Come emergere su LinkedIn',
+    body: 'Ottimizza il profilo, crea una strategia, pubblica contenuti e organizza il CRM.',
   },
   {
     number: '04',
     bg: '/images/blue-bg-patch.webp',
-    title: 'Acquisizione clienti',
-    body: 'Impara a trovare prospect e trasformare le conversazioni in clienti.',
+    title: 'Vendita dei servizi prodottizzati',
+    body: 'Warm e cold outreach, chiamate di vendita e sales deck per acquisire clienti.',
   },
   {
     number: '05',
     bg: '/images/black-bg-patch.webp',
-    title: 'Onboarding e fidelizzazione',
-    body: "Crea un'esperienza cliente solida e costruisci relazioni durature.",
+    title: 'Gestione dei clienti',
+    body: 'Onboarding, gestione operativa, casi studio, fidelizzazione, upsell e referral.',
     numberClass: 'text-white/20 group-hover:text-white',
   },
 ];
 
 export const FAQS = [
   {
-    question: 'Cos\'è "servizi prodottizzati"?',
+    question: 'Cos’è un servizio prodottizzato?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+      'È un servizio con un’offerta, un perimetro e un prezzo chiari, progettato per essere venduto e realizzato con un processo replicabile.',
   },
   {
     question: 'Devo già avere un servizio prodottizzato per entrare?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+      'No. Il corso parte dalle basi e ti accompagna nella definizione dell’offerta, nella vendita e nella gestione dei clienti.',
   },
   {
     question: 'Cosa differenzia Skool dal gruppo Telegram gratuito?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+      'Telegram è uno spazio gratuito e informale. La community Pro include il corso, workshop mensili e offerte di lavoro.',
   },
   {
-    question: "Posso annullare l'abbonamento quando voglio?",
+    question: 'Quali piani sono disponibili?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer.',
+      'Puoi scegliere il piano annuale da 350 USD o il piano lifetime da 550 USD. Le condizioni di acquisto sono mostrate da Skool al checkout.',
   },
 ];
 
 export const METHOD_ITEMS = [
-  'Full-time o part-time: cosa scegliere',
-  'Costruire da solo o in team',
-  'Tenerlo semplice: il principio ASAP',
-  'Posizionarti senza bisogno di un grande pubblico',
-  'Definire i tuoi package e il pricing',
-  'Costruire un portfolio credibile',
-  'Trovare il primo cliente',
-  'Vendere senza fare call infinite',
-  'Gli errori più comuni da evitare',
-  'Gestire i pagamenti e i rinnovi',
+  'La mia storia e i primi passi nei servizi prodottizzati',
+  'Esempi di servizi prodottizzati',
+  'Il metodo unbundling e la productizzazione delle attività',
+  'Oltre la productizzazione: tre formati di vendita',
+  'Definire scope e discovery offer',
+  'Ottimizzare il profilo LinkedIn e costruire una strategia',
+  'Creare post, usare un CRM e fare warm outreach',
+  'Fare cold outreach e gestire le chiamate di vendita',
+  'Preparare un sales deck efficace',
+  'Gestire onboarding, clienti, casi studio, fidelizzazione, upsell e referral',
 ];
 
 export const METHOD_COLUMNS = [METHOD_ITEMS.slice(0, 5), METHOD_ITEMS.slice(5, 10)];
 
 export const OPPORTUNITY_PILLS = [
-  { icon: '/images/search-icon.webp', text: 'Cerco un partner per la parte di delivery del mio servizio' },
+  { icon: '/images/search-icon.webp', text: 'Cerco un professionista con cui collaborare' },
   { icon: '/images/users-icon.webp', text: 'Sto assumendo un secondo membro nel mio team' },
-  { icon: '/images/office-icon.webp', text: 'Cliente in cerca di un servizio prodottizzato per [settore]' },
+  { icon: '/images/office-icon.webp', text: 'Clienti in cerca di professionisti' },
 ];
 
-export const MONTHLY_FEATURES = [
+export const PLAN_FEATURES = [
   'Accesso completo alla community',
   'Corso completo incluso',
-  'Tutti i 5 moduli',
-  'Accesso al network e alle opportunità',
-  'Telegram gratuito',
+  'Tutte le registrazioni dei workshop',
+  'Accesso al network e alle offerte di lavoro',
+  '3 consulenze 1:1 all’anno di un’ora con Niccolò',
 ];
 
-export const ANNUAL_FEATURES = [
-  'Risparmia 2 mesi con il piano annuale.',
-  'Accesso completo alla community',
-  'Corso completo incluso',
-  'Tutti i 5 moduli',
-  'Accesso al network e alle opportunità',
-  'Telegram gratuito',
-];
+export const LIFETIME_FEATURES = [...PLAN_FEATURES, 'Accesso a vita alla community'];
 
 export const PROBLEM_CARDS = [
   {
@@ -153,7 +152,7 @@ export const PROBLEM_CARDS = [
 
 export const STATS_CARDS = [
   {
-    value: '100+',
+    value: '320+',
     label: 'membri attivi',
     cardClass: "bg-[url('/images/bg-spiral.webp')] bg-cover bg-center text-white",
   },
@@ -163,7 +162,7 @@ export const STATS_CARDS = [
     cardClass: 'bg-[#D1DF64] text-black',
   },
   {
-    value: '2',
+    value: '2+',
     label: 'offerte di lavoro condivise ogni mese',
     cardClass: "bg-[url('/images/bg-spiral-violet.webp')] bg-cover bg-center text-white",
   },
@@ -171,52 +170,28 @@ export const STATS_CARDS = [
 
 export const TESTIMONIALS = [
   {
-    avatar: '/images/sean.webp',
-    name: 'Sean Rose',
-    role: 'Direttore Commerciale, Azienda Tecnologica',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
+        avatar: '/images/testimonials/massimo.webp',
+    name: 'Massimo Muntoni',
+    role: 'Designer UI/UX freelance',
+    quote: 'Esperienza a Tenerife con altri quattro ragazzi mai visti prima, poteva andare tutto a rotoli e invece è stata un’esperienza fantastica. Questo rivela il potere di questa community.',
   },
   {
-    avatar: '/images/dimetria.webp',
-    name: 'Demetria Giles',
-    role: 'Fondatore, Agenzia di Marketing',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 5,
+    avatar: '/images/testimonials/zambo.webp',
+    name: 'Federico Zambelli',
+    role: 'Data Engineer',
+    quote: 'Top 2 decisioni di carriera prese nel 2026.',
   },
   {
-    avatar: '/images/ryan.webp',
-    name: 'Ryan Delk',
-    role: 'Partner, Società di Servizi Professionali',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
+    avatar: '/images/testimonials/federico.webp',
+    name: 'Federico Bellezza',
+    role: 'Sviluppatore web freelance',
+    quote: 'Corso super interessante, soprattutto per il suo approccio pratico e passo passo. Niccolò ti lascia delle chicche non da poco durante le lezioni.',
   },
-    {
-    avatar: '/images/sean.webp',
-    name: 'Sean Rose',
-    role: 'Direttore Commerciale, Azienda Tecnologica',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
-  },
-  {
-    avatar: '/images/dimetria.webp',
-    name: 'Demetria Giles',
-    role: 'Fondatore, Agenzia di Marketing',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 5,
-  },
-  {
-    avatar: '/images/ryan.webp',
-    name: 'Ryan Delk',
-    role: 'Partner, Società di Servizi Professionali',
-    quote:
-      'Lorem ipsum dolor sit amet consectetur. Felis hendrerit tempor felis vestibulum facilisi. Id in sapien ut integer. Cras a etiam in sem luctus nisl vitae vel vitae.',
-    rating: 4,
+      {
+    avatar: '/images/testimonials/mirko.webp',
+    name: 'Mirko Marasco',
+    role: 'Sviluppatore full stack freelance',
+    quote: 'Top 3 decisioni di carriera prese nel 2026.',
   },
 ];
 
@@ -232,18 +207,18 @@ export const WHATS_INSIDE_CARDS = [
     illustration: Community,
     title: 'Community',
     color: 'cyan',
-    body: "Confrontati ogni giorno con 250+ professionisti che stanno costruendo lo stesso modello di business. Domande, feedback, partnership, amicizie — e i workation in giro per l'Europa per conoscersi davvero.",
+    body: 'Entra in contatto con oltre 220 professionisti. Partecipa alle discussioni, condividi progressi e sblocca nuove connessioni attraverso livelli e classifiche.',
   },
   {
     illustration: Jobs,
     title: 'Offerte di lavoro',
     color: 'violet-dark',
-    body: 'Dentro alla parte paid trovi una bacheca con opportunità riservate ai membri: collaborazioni, clienti in cerca di servizi prodottizzati, posizioni aperte da altri membri della community.',
+    body: 'Nella parte Pro trovi opportunità riservate ai membri: collaborazioni tra professionisti, clienti in cerca di professionisti e posizioni aperte nella community.',
   },
   {
     illustration: Course,
     title: 'Corso',
     color: 'yellow-dark',
-    body: 'Il percorso passo passo per lanciare, prezzare e scalare il tuo servizio ad abbonamento — dalla prima offerta al primo cliente ricorrente.',
+    body: 'Il percorso passo passo per lanciare il tuo servizio, acquisire clienti e farlo crescere, dalla prima offerta al primo cliente ricorrente.',
   },
 ] as const;
