@@ -3,6 +3,7 @@ import "../global.css";
 import CookieConsent from "./cookie-consent.astro";
 import Footer from "./footer.astro";
 import Header from "./header.astro";
+import PostHog from "./posthog.astro";
 
 const {
 	title = "Servizi prodottizzati per freelance | Community Italia",
@@ -55,6 +56,7 @@ const socialImageUrl = new URL("/og-graph.png", Astro.site);
 		>
 		<slot name="head" />
 		<CookieConsent />
+		{import.meta.env.PROD && <PostHog />}
 	</head>
 	<body class="bg-white font-body">
 		<Header />
