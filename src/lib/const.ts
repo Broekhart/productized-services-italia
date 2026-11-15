@@ -53,7 +53,7 @@ export const WIDE_MODULES = [
 	{
 		number: "02",
 		bg: "/images/red-bg-patch.webp",
-		title: "Productizza il tuo servizio",
+		title: "Prodottizza il tuo servizio",
 		body: "Unbundling, formati di vendita, scope e discovery offer per costruire la tua offerta.",
 	},
 ];
@@ -106,8 +106,8 @@ export const FAQS = [
 export const METHOD_ITEMS = [
 	"La mia storia e i primi passi nei servizi prodottizzati",
 	"Esempi di servizi prodottizzati",
-	"Il metodo unbundling e la productizzazione delle attività",
-	"Oltre la productizzazione: tre formati di vendita",
+	"Il metodo unbundling e la prodottizzazione delle attività",
+	"Oltre la prodottizzazione: tre formati di vendita",
 	"Definire scope e discovery offer",
 	"Ottimizzare il profilo LinkedIn e costruire una strategia",
 	"Creare post, usare un CRM e fare warm outreach",
