@@ -17,14 +17,15 @@ type Props =
 const { variant = "primary", ...props } = Astro.props;
 
 const variantMap: Record<Variant, string> = {
-	primary: "bg-glass text-white border border-white/10",
+	primary:
+		"bg-glass text-white border border-white/10 hover:shadow-[0px_6px_4px_rgba(122,43,160,0.51)]",
 	secondary: "bg-black text-white hover:bg-violet-dark",
 	outline:
 		"bg-white text-black border border-black hover:bg-black hover:text-white",
 };
 
 const className = twMerge(
-	"flex items-center gap-2 rounded-xl py-3 px-6 text-sm font-bold aria-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed transition-colors *:shrink-0",
+	"flex items-center gap-2 rounded-xl py-3 px-6 text-sm font-bold aria-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed transition-all *:shrink-0",
 	variantMap[variant],
 	props.class,
 );
